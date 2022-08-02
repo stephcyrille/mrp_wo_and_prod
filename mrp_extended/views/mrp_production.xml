@@ -1,0 +1,12 @@
+<odoo>
+  <record id="mrp_extend_production_form_view" model="ir.ui.view">
+    <field name="name">mrp.production.form</field>
+    <field name="model">mrp.production</field>
+    <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
+    <field name="arch" type="xml">
+      <button name="button_unplan" position="before">
+        <button name="action_launch_wo" type="object" class="oe_highlight" string="Lauch all WO" attrs="{'invisible': ['|', ('is_planned', '=', False), ('state', '=', 'cancel')]}" />
+      </button>
+    </field>
+  </record>
+</odoo>
