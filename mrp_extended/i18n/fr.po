@@ -1,0 +1,52 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* mrp_extended
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-08-03 15:02+0000\n"
+"PO-Revision-Date: 2022-08-03 15:02+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mrp_extended
+#: model_terms:ir.ui.view,arch_db:mrp_extended.mrp_extend_production_form_view
+msgid "Lauch all WO"
+msgstr "Démarrer tous les OT"
+
+#. module: mrp_extended
+#: model:ir.model,name:mrp_extended.model_mrp_bom_line
+msgid "MRP Bom line extended"
+msgstr "MRP Bom line étendu"
+
+#. module: mrp_extended
+#: model:ir.model,name:mrp_extended.model_mrp_production
+msgid "MRP production extended"
+msgstr "Fabrication étendue"
+
+#. module: mrp_extended
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_bom_line__product_qty
+msgid "Quantity"
+msgstr "Quantité"
+
+#. module: mrp_extended
+#: code:addons/mrp_extended/models/mrp_production.py:0
+#, python-format
+msgid ""
+"Some work orders are already done, you cannot launch all the WO of this "
+"manufacturing order."
+msgstr "Certains ordres de travail ont deja été cloturées, vous ne pouvez pas démarrer tous les ordres de travail de cet ordre de fabrication"
+
+#. module: mrp_extended
+#: code:addons/mrp_extended/models/mrp_production.py:0
+#, python-format
+msgid ""
+"Some work orders have already started, you cannot launch all the WO of this "
+"manufacturing order."
+msgstr "Certains ordres de travail sont déja entamés, vous ne pouvez pas démarrer tous les ordres de travail de cet ordre de fabrication"
