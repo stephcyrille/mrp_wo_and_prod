@@ -28,6 +28,7 @@
     'data': [
         # 'security/ir.model.access.csv',
         'views/mrp_production.xml',
+        'report/mrp_report_view_extended.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
