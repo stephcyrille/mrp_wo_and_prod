@@ -10,6 +10,21 @@ class MrpProduction(models.Model):
     _inherit = ['mrp.production']
     _description = "MRP production extended"
 
+    start_date = fields.Datetime('Start Date', help="Date at which you really start the production.")
+    end_date = fields.Datetime('End Date', help="Date at which you will finish the production.")
+    duration = fields.Char(
+        'Duration', compute='_compute_duration', readonly=True, store=True, copy=False)
+    block_reasons_ids = fields.One2many(
+        'mrp.workcenter.productivity', 'production_id', 'Block reasons', copy=True)
+
+    @api.depends('start_date', 'end_date')
+    def _compute_duration(self):
+        for rec in self:
+            if rec.start_date and rec.end_date:
+                rec.duration = rec.end_date - rec.start_date
+            else:
+                rec.duration = False
+
     def action_launch_wo(self):
         self.ensure_one()
         if any(wo.state == 'done' for wo in self.workorder_ids):

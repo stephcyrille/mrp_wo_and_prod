@@ -11,6 +11,44 @@
                         ('qty_producing', '!=', 0),
                         ('state', '!=', 'to_close')]}" />
       </button>
+
+      <xpath expr="//field[@name='bom_id']" position="after">
+          <xpath expr="//field[@name='user_id']" position="move"/>
+          <xpath expr="//field[@name='company_id']" position="move"/>
+      </xpath>
+
+      <xpath expr="//field[@name='components_availability_state']" position="before">
+        <label for="start_date"/>
+        <div class="o_row">
+            <field name="start_date"
+                attrs="{'readonly': [('state', 'in', ['close', 'cancel'])]}"
+                decoration-warning="state not in ('done', 'cancel') and start_date &lt; now"
+                decoration-danger="state not in ('done', 'cancel') and start_date &lt; current_date"
+                decoration-bf="state not in ('done', 'cancel') and (start_date &lt; current_date or start_date &lt; now)"/>
+        </div>
+        <label for="end_date"/>
+        <div class="o_row">
+            <field name="end_date"
+                attrs="{'readonly': [('state', 'in', ['close', 'cancel'])]}"
+                decoration-danger="state not in ('done', 'cancel') and end_date &lt; start_date"
+                decoration-bf="state not in ('done', 'cancel') and (end_date &lt; start_date or end_date &lt; now)"/>
+        </div>
+        <field name="duration" />
+      </xpath>
+
+      <page name="operations" position="after">
+        <page string="Bloc reasons" name="block_reasons" groups="mrp.group_mrp_routings">
+          <field name="block_reasons_ids" attrs="{'readonly': [('state', 'in', ['cancel', 'done'])]}">
+            <tree editable="bottom">
+              <field name="loss_id"/>
+              <field name="start_date"/>
+              <field name="end_date"/>
+              <field name="description"/>
+            </tree>
+          </field>
+        </page>
+      </page>
+
     </field>
   </record>
 </odoo>
