@@ -40,7 +40,7 @@
         <page string="Bloc reasons" name="block_reasons" groups="mrp.group_mrp_routings">
           <field name="block_reasons_ids" attrs="{'readonly': [('state', 'in', ['cancel', 'done'])]}">
             <tree editable="bottom">
-              <field name="loss_id"/>
+              <field name="loss_id" string="Block reason"/>
               <field name="start_date"/>
               <field name="end_date"/>
               <field name="description"/>
