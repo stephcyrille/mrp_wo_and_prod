@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-16 15:10+0000\n"
-"PO-Revision-Date: 2022-08-16 15:10+0000\n"
+"POT-Creation-Date: 2022-08-23 07:17+0000\n"
+"PO-Revision-Date: 2022-08-23 07:17+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -56,7 +56,7 @@ msgstr "<span>Operations planifiées</span>"
 #: model_terms:ir.ui.view,arch_db:mrp_extended.report_mrporder_after
 #: model_terms:ir.ui.view,arch_db:mrp_extended.report_mrporder_before
 msgid "<strong>Description:</strong><br/>"
-msgstr "<strong>Description:</strong><br/>"
+msgstr ""
 
 #. module: mrp_extended
 #: model_terms:ir.ui.view,arch_db:mrp_extended.report_mrporder_after
@@ -108,18 +108,69 @@ msgstr "Code Barre"
 
 #. module: mrp_extended
 #: model_terms:ir.ui.view,arch_db:mrp_extended.mrp_extend_production_form_view
+msgid "Bloc reasons"
+msgstr "Causes d'arrêt"
+
+#. module: mrp_extended
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_production__block_reasons_ids
+msgid "Block reasons"
+msgstr "Causes d'arrêt"
+
+#. module: mrp_extended
+#: model:ir.model.fields,help:mrp_extended.field_mrp_workcenter_productivity__start_date
+msgid "Date at which you have started bloc production."
+msgstr "Date de début d'arrêt de la production"
+
+#. module: mrp_extended
+#: model:ir.model.fields,help:mrp_extended.field_mrp_production__start_date
+msgid "Date at which you really start the production."
+msgstr "Date de début de la production"
+
+#. module: mrp_extended
+#: model:ir.model.fields,help:mrp_extended.field_mrp_production__end_date
+msgid "Date at which you will finish the production."
+msgstr "Date de fin de la production"
+
+#. module: mrp_extended
+#: model:ir.model.fields,help:mrp_extended.field_mrp_workcenter_productivity__end_date
+msgid "Date at which you will finish to bloc the production."
+msgstr "Date de fin d'arrêt de la production"
+
+#. module: mrp_extended
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_production__duration
+msgid "Duration"
+msgstr "Durée"
+
+#. module: mrp_extended
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_production__end_date
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_workcenter_productivity__end_date
+msgid "End Date"
+msgstr "Date de fin"
+
+#. module: mrp_extended
+#: model_terms:ir.ui.view,arch_db:mrp_extended.mrp_extend_production_form_view
 msgid "Lauch all WO"
 msgstr "Démarrer tous les OT"
 
 #. module: mrp_extended
 #: model:ir.model,name:mrp_extended.model_mrp_bom_line
 msgid "MRP Bom line extended"
-msgstr "Ligne MRP Bom"
+msgstr ""
+
+#. module: mrp_extended
+#: model:ir.model,name:mrp_extended.model_mrp_workorder
+msgid "MRP Work Order extended"
+msgstr ""
 
 #. module: mrp_extended
 #: model:ir.model,name:mrp_extended.model_mrp_production
 msgid "MRP production extended"
-msgstr "Module Production"
+msgstr "Fabrication extendue"
+
+#. module: mrp_extended
+#: model:ir.model,name:mrp_extended.model_mrp_workcenter_productivity
+msgid "MRP workcenter productivity extended"
+msgstr "Fabrication centre de travail étendu"
 
 #. module: mrp_extended
 #: model_terms:ir.ui.view,arch_db:mrp_extended.report_mrporder_after
@@ -158,3 +209,9 @@ msgid ""
 msgstr ""
 "Certains ordres de travail sont déja entamés, vous ne pouvez pas démarrer "
 "tous les ordres de travail de cet ordre de fabrication"
+
+#. module: mrp_extended
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_production__start_date
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_workcenter_productivity__start_date
+msgid "Start Date"
+msgstr "Date de début"
