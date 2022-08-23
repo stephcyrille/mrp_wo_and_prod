@@ -28,7 +28,7 @@
     'data': [
         # 'security/ir.model.access.csv',
         'views/mrp_production.xml',
-        'views/mrp_workorder.xml',
+        #'views/mrp_workorder.xml',
 
         'report/mrp_report_view_extended.xml',
         'report/mrp_production_template_before.xml',
