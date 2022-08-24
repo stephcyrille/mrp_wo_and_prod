@@ -10,8 +10,8 @@ class MrpProduction(models.Model):
     _inherit = ['mrp.production']
     _description = "MRP production extended"
 
-    start_date = fields.Datetime('Start Date', help="Date at which you really start the production.")
-    end_date = fields.Datetime('End Date', help="Date at which you will finish the production.")
+    start_date = fields.Datetime('Start Date', help="Date at which you really start the production.", required=True)
+    end_date = fields.Datetime('End Date', help="Date at which you will finish the production.", required=True)
     duration = fields.Char(
         'Duration', compute='_compute_duration', readonly=True, store=True, copy=False)
     block_reasons_ids = fields.One2many(
