@@ -15,7 +15,7 @@ class MrpProduction(models.Model):
     duration = fields.Char(
         'Duration', compute='_compute_duration', readonly=True, store=True, copy=False)
     block_reasons_ids = fields.One2many(
-        'mrp.workcenter.productivity', 'production_id', 'Block reasons', copy=True)
+        'mrp.workcenter.productivity.loss', 'production_id', 'Block reasons', copy=True)
 
     @api.depends('start_date', 'end_date')
     def _compute_duration(self):

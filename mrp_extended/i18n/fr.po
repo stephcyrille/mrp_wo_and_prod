@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-23 07:33+0000\n"
-"PO-Revision-Date: 2022-08-23 07:33+0000\n"
+"POT-Creation-Date: 2022-08-24 10:29+0000\n"
+"PO-Revision-Date: 2022-08-24 10:29+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -122,9 +122,9 @@ msgid "Block reasons"
 msgstr "Causes d'arrêt"
 
 #. module: mrp_extended
-#: model:ir.model.fields,help:mrp_extended.field_mrp_workcenter_productivity__start_date
+#: model:ir.model.fields,help:mrp_extended.field_mrp_workcenter_productivity_loss__start_date
 msgid "Date at which you have started bloc production."
-msgstr "Date de début d'arrêt de la production"
+msgstr "Date de début de l'arrêt des traveaux"
 
 #. module: mrp_extended
 #: model:ir.model.fields,help:mrp_extended.field_mrp_production__start_date
@@ -137,9 +137,14 @@ msgid "Date at which you will finish the production."
 msgstr "Date de fin de la production"
 
 #. module: mrp_extended
-#: model:ir.model.fields,help:mrp_extended.field_mrp_workcenter_productivity__end_date
+#: model:ir.model.fields,help:mrp_extended.field_mrp_workcenter_productivity_loss__end_date
 msgid "Date at which you will finish to bloc the production."
-msgstr "Date de fin d'arrêt de la production"
+msgstr "Date de fin de l'arrêt de production"
+
+#. module: mrp_extended
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_workcenter_productivity_loss__description
+msgid "Description"
+msgstr ""
 
 #. module: mrp_extended
 #: model:ir.model.fields,field_description:mrp_extended.field_mrp_production__duration
@@ -148,7 +153,7 @@ msgstr "Durée"
 
 #. module: mrp_extended
 #: model:ir.model.fields,field_description:mrp_extended.field_mrp_production__end_date
-#: model:ir.model.fields,field_description:mrp_extended.field_mrp_workcenter_productivity__end_date
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_workcenter_productivity_loss__end_date
 msgid "End Date"
 msgstr "Date de fin"
 
@@ -173,9 +178,14 @@ msgid "MRP production extended"
 msgstr ""
 
 #. module: mrp_extended
-#: model:ir.model,name:mrp_extended.model_mrp_workcenter_productivity
-msgid "MRP workcenter productivity extended"
+#: model:ir.model,name:mrp_extended.model_mrp_workcenter_productivity_loss
+msgid "MRP workcenter productivity loss extended"
 msgstr ""
+
+#. module: mrp_extended
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_workcenter_productivity_loss__production_id
+msgid "Manufacturing Order"
+msgstr "Ordre de fabrication"
 
 #. module: mrp_extended
 #: model_terms:ir.ui.view,arch_db:mrp_extended.report_mrporder_after
@@ -217,6 +227,6 @@ msgstr ""
 
 #. module: mrp_extended
 #: model:ir.model.fields,field_description:mrp_extended.field_mrp_production__start_date
-#: model:ir.model.fields,field_description:mrp_extended.field_mrp_workcenter_productivity__start_date
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_workcenter_productivity_loss__start_date
 msgid "Start Date"
 msgstr "Date de début"
