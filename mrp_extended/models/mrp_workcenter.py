@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-from datetime import datetime, timedelta
-from dateutil.relativedelta import relativedelta
 
 from odoo import api, fields, models, _
 
