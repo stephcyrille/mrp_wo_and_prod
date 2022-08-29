@@ -1,0 +1,56 @@
+<odoo>
+  <record id="mrp_equipment_list_view" model="ir.ui.view">
+        <field name="name">mrp.equipment.tree</field>
+        <field name="model">mrp.equipment</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="description" />
+                <field name="brand" />
+                <field name="serial" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="mrp_equipment_form" model="ir.ui.view">
+      <field name="name">mrp.equipment.form</field>
+      <field name="model">mrp.equipment</field>
+      <field name="arch" type="xml">
+        <form string="Equipment">
+          <sheet>
+            <div class="oe_title">
+              <label class="o_form_label" for="name"/>
+              <h1>
+                <field name="name"/>
+              </h1>
+            </div>
+            <group>
+              <group>
+                <field name="brand" />
+              </group>
+              <group>
+                <field name="serial" />
+              </group>
+            </group>
+            <group>
+              <field name="description" />
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="action_mrp_equipment" model="ir.actions.act_window">
+        <field name="name">MRP Equipment</field>
+        <field name="res_model">mrp.equipment</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+          id="mrp_equipment_menu"
+          name="Equipment"
+          sequence="3"
+          parent="mrp_stop_menu"
+          action="action_mrp_equipment"
+      />
+</odoo>

@@ -37,14 +37,15 @@
       </xpath>
 
       <page name="operations" position="after">
-        <page string="Bloc reasons" name="block_reasons" groups="mrp.group_mrp_routings">
+        <page string="Stop reasons" name="block_reasons" groups="mrp.group_mrp_routings">
           <field name="block_reasons_ids" attrs="{'readonly': [('state', 'in', ['cancel', 'done'])]}">
             <tree editable="bottom">
-              <field name="name" string="Block reason"/>
-              <field name="loss_id"/>
+              <field name="stop_type_id" string="Type"/>
+              <field name="stop_reason_id" string="Reason"/>
+              <field name="description"/>
+              <field name="equipment_id" string="Equipment"/>
               <field name="start_date"/>
               <field name="end_date"/>
-              <field name="description"/>
             </tree>
           </field>
         </page>

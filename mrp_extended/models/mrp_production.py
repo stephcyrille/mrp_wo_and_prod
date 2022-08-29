@@ -10,12 +10,11 @@ class MrpProduction(models.Model):
     _inherit = ['mrp.production']
     _description = "MRP production extended"
 
-    start_date = fields.Datetime('Start Date', help="Date at which you really start the production.", required=True)
-    end_date = fields.Datetime('End Date', help="Date at which you will finish the production.", required=True)
+    start_date = fields.Datetime('Start Date', help="Date at which you really start the production.")
+    end_date = fields.Datetime('End Date', help="Date at which you will finish the production.")
     duration = fields.Char(
         'Duration', compute='_compute_duration', readonly=True, store=True, copy=False)
-    block_reasons_ids = fields.One2many(
-        'mrp.workcenter.productivity.loss', 'production_id', 'Block reasons', copy=True)
+    block_reasons_ids = fields.One2many('mrp.stop', 'production_id', 'Stop reasons')
 
     @api.depends('start_date', 'end_date')
     def _compute_duration(self):
@@ -24,6 +23,40 @@ class MrpProduction(models.Model):
                 rec.duration = rec.end_date - rec.start_date
             else:
                 rec.duration = False
+
+    def action_confirm(self):
+        self._check_company()
+        for production in self:
+            if not production.start_date:
+                raise UserError(_("You cannot proceed! Production start date is mandatory."))
+            if not production.end_date:
+                raise UserError(_("You cannot proceed! Production end date is mandatory."))
+            if production.end_date < production.start_date:
+                raise UserError(_("The production start date must not be greater than the production end date."))
+            if production.bom_id:
+                production.consumption = production.bom_id.consumption
+            # In case of Serial number tracking, force the UoM to the UoM of product
+            if production.product_tracking == 'serial' and production.product_uom_id != production.product_id.uom_id:
+                production.write({
+                    'product_qty': production.product_uom_id._compute_quantity(production.product_qty, production.product_id.uom_id),
+                    'product_uom_id': production.product_id.uom_id
+                })
+                for move_finish in production.move_finished_ids.filtered(lambda m: m.product_id == production.product_id):
+                    move_finish.write({
+                        'product_uom_qty': move_finish.product_uom._compute_quantity(move_finish.product_uom_qty, move_finish.product_id.uom_id),
+                        'product_uom': move_finish.product_id.uom_id
+                    })
+            production.move_raw_ids._adjust_procure_method()
+            (production.move_raw_ids | production.move_finished_ids)._action_confirm(merge=False)
+            production.workorder_ids._action_confirm()
+        # run scheduler for moves forecasted to not have enough in stock
+        self.move_raw_ids._trigger_scheduler()
+        self.picking_ids.filtered(
+            lambda p: p.state not in ['cancel', 'done']).action_confirm()
+        # Force confirm state only for draft production not for more advanced state like
+        # 'progress' (in case of backorders with some qty_producing)
+        self.filtered(lambda mo: mo.state == 'draft').state = 'confirmed'
+        return True
 
     def action_launch_wo(self):
         self.ensure_one()

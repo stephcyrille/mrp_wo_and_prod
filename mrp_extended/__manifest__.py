@@ -26,8 +26,12 @@
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
+        'security/ir.model.access.csv',
         'views/mrp_production.xml',
+        'views/mrp_stop_type.xml',
+        'views/mrp_stop_reason.xml',
+        'views/mrp_equipment.xml',
+        'views/mrp_stop.xml',
         #'views/mrp_workorder.xml',
 
         'report/mrp_report_view_extended.xml',
