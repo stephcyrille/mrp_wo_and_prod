@@ -27,12 +27,12 @@ class MrpProduction(models.Model):
     def action_confirm(self):
         self._check_company()
         for production in self:
-            if not production.start_date:
-                raise UserError(_("You cannot proceed! Production start date is mandatory."))
-            if not production.end_date:
-                raise UserError(_("You cannot proceed! Production end date is mandatory."))
-            if production.end_date < production.start_date:
-                raise UserError(_("The production start date must not be greater than the production end date."))
+            # if not production.start_date:
+            #     raise UserError(_("You cannot proceed! Production start date is mandatory."))
+            # if not production.end_date:
+            #     raise UserError(_("You cannot proceed! Production end date is mandatory."))
+            # if production.end_date < production.start_date:
+            #     raise UserError(_("The production start date must not be greater than the production end date."))
             if production.bom_id:
                 production.consumption = production.bom_id.consumption
             # In case of Serial number tracking, force the UoM to the UoM of product

@@ -1,0 +1,40 @@
+<odoo>
+    <record id="mrp_stop_pivot_view" model="ir.ui.view">
+        <field name="name">mrp.stop.pivot</field>
+        <field name="model">mrp.stop</field>
+        <field name="arch" type="xml">
+            <pivot string="Analyse des arrêts" disable_linking="true">
+              <field name="stop_type_id" type="col"/>
+              <field name="start_date" type="row"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="mrp_stop_view_graph" model="ir.ui.view">
+      <field name="name">mrp.stop.graph</field>
+      <field name="model">mrp.stop</field>
+      <field name="arch" type="xml">
+        <graph string="Analyse des arrêts">
+          <field name="stop_type_id" type="row" />
+          <field name="start_date" type="col" />
+        </graph>
+      </field>
+    </record>
+
+    <record id="mrp_stop_pivot_action" model="ir.actions.act_window">
+      <field name="name">Analyse croisée des arrêts</field>
+      <field name="res_model">mrp.stop</field>
+      <field name="view_mode">pivot,graph</field>
+      <field name="view_id" />
+    </record>
+
+    <!-- Top menu item -->
+    <menuitem
+        id="mrp_stop_pivot_menu"
+        name="Analyse des arrêts"
+        parent="mrp.menu_mrp_reporting"
+        sequence="12"
+        action="mrp_stop_pivot_action"
+        groups="mrp.group_mrp_user,mrp.group_mrp_manager"
+    />
+</odoo>
