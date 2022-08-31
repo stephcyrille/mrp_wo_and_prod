@@ -22,7 +22,7 @@
     'version': '15.0',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'mrp', 'queue_job'],
+    'depends': ['base', 'mrp', 'queue_job', 'maintenance'],
 
     # always loaded
     'data': [

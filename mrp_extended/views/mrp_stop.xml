@@ -49,7 +49,7 @@
     <menuitem
           id="mrp_stop_line_menu"
           name="Stop line"
-          sequence="4"
+          sequence="5"
           parent="mrp_stop_menu"
           action="action_mrp_stop"
       />
