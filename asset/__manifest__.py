@@ -29,6 +29,11 @@ Support following feature:
     'category': 'Industries',
     'sequence': 0,
     'depends': ['stock'],
+    'assets': {
+        'web.assets_backend': [
+            ('after', 'web/static/src/xml/**/*', 'static/src/css/asset.css'),
+        ],
+    },
     'demo': ['asset_demo.xml'],
     'data': [
         'security/asset_security.xml',
@@ -36,7 +41,7 @@ Support following feature:
         'asset_view.xml',
         'asset_data.xml',
         'stock_data.xml',
-        'views/asset.xml',
+        #'views/asset.xml',
     ],
     'installable': True,
     'application': True,
