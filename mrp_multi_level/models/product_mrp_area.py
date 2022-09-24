@@ -39,6 +39,8 @@ class ProductMRPArea(models.Model):
         help="Set this if you need to procure from a different location"
         "than area's location.",
     )
+    date_from = fields.Date(string="Date de debut")
+    date_to = fields.Date(string="Date de fin")
     # TODO: applicable and exclude... redundant??
     mrp_applicable = fields.Boolean(string="MRP Applicable")
     mrp_exclude = fields.Boolean(string="Exclude from MRP")

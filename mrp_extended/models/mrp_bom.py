@@ -8,3 +8,4 @@ class MrpBomLine(models.Model):
     _description = "MRP Bom line extended"
 
     product_qty = fields.Float('Quantity', default=1.0, digits=(14, 5), required=True)
+    percentage_perte = fields.Float('Pourcentages de perte', digits=(16, 4), required=False)

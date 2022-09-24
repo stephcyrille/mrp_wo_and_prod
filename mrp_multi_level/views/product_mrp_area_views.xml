@@ -68,6 +68,8 @@
                                 name="location_proc_id"
                                 options="{'no_create': True}"
                             />
+							<field name="date_from" />
+							<field name="date_to" />
                         </group>
                         <group>
                             <field name="mrp_exclude" />
