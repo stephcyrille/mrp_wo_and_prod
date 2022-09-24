@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-29 13:44+0000\n"
-"PO-Revision-Date: 2022-08-29 13:44+0000\n"
+"POT-Creation-Date: 2022-09-24 08:51+0000\n"
+"PO-Revision-Date: 2022-09-24 08:51+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -101,18 +101,36 @@ msgid "<strong>WorkCenter</strong>"
 msgstr "<strong>Poste de travail</strong>"
 
 #. module: mrp_extended
+#: code:addons/mrp_extended/models/mrp_stop.py:0
+#: code:addons/mrp_extended/models/mrp_stop.py:0
+#, python-format
+msgid "A break start date must be between the production period"
+msgstr "La date de début de l'arrêt doit être comprise dans la periode de la production"
+
+#. module: mrp_extended
+#: model:ir.actions.act_window,name:mrp_extended.mrp_stop_pivot_action
+msgid "Analyse croisée des arrêts"
+msgstr ""
+
+#. module: mrp_extended
+#: model:ir.ui.menu,name:mrp_extended.mrp_stop_pivot_menu
+#: model_terms:ir.ui.view,arch_db:mrp_extended.mrp_stop_pivot_view
+#: model_terms:ir.ui.view,arch_db:mrp_extended.mrp_stop_view_graph
+msgid "Analyse des arrêts"
+msgstr ""
+
+#. module: mrp_extended
 #: model_terms:ir.ui.view,arch_db:mrp_extended.report_mrporder_after
 #: model_terms:ir.ui.view,arch_db:mrp_extended.report_mrporder_before
 msgid "Barcode"
 msgstr "Code Barre"
 
 #. module: mrp_extended
-#: model:ir.model.fields,field_description:mrp_extended.field_mrp_equipment__brand
-msgid "Brand"
-msgstr "Marque"
+#: model:ir.ui.menu,name:mrp_extended.mrp_equipment_category_menu
+msgid "Catégories d'équipment"
+msgstr ""
 
 #. module: mrp_extended
-#: model:ir.model.fields,field_description:mrp_extended.field_mrp_equipment__create_uid
 #: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop__create_uid
 #: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop_reason__create_uid
 #: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop_type__create_uid
@@ -120,7 +138,6 @@ msgid "Created by"
 msgstr "Créé par"
 
 #. module: mrp_extended
-#: model:ir.model.fields,field_description:mrp_extended.field_mrp_equipment__create_date
 #: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop__create_date
 #: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop_reason__create_date
 #: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop_type__create_date
@@ -155,14 +172,12 @@ msgid "Demand"
 msgstr "Demande"
 
 #. module: mrp_extended
-#: model:ir.model.fields,field_description:mrp_extended.field_mrp_equipment__description
 #: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop__description
 #: model:ir.model.fields,field_description:mrp_extended.field_mrp_workcenter_productivity_loss__description
 msgid "Description"
 msgstr ""
 
 #. module: mrp_extended
-#: model:ir.model.fields,field_description:mrp_extended.field_mrp_equipment__display_name
 #: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop__display_name
 #: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop_reason__display_name
 #: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop_type__display_name
@@ -184,7 +199,6 @@ msgstr "Date de fin"
 #. module: mrp_extended
 #: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop__equipment_id
 #: model:ir.ui.menu,name:mrp_extended.mrp_equipment_menu
-#: model_terms:ir.ui.view,arch_db:mrp_extended.mrp_equipment_form
 #: model_terms:ir.ui.view,arch_db:mrp_extended.mrp_extend_production_form_view
 msgid "Equipment"
 msgstr "Equipement"
@@ -195,7 +209,6 @@ msgid "Forecast Availability"
 msgstr "Prévision de disponibilité"
 
 #. module: mrp_extended
-#: model:ir.model.fields,field_description:mrp_extended.field_mrp_equipment__id
 #: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop__id
 #: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop_reason__id
 #: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop_type__id
@@ -209,23 +222,20 @@ msgid "Label"
 msgstr "Etiquette"
 
 #. module: mrp_extended
-#: model:ir.model.fields,field_description:mrp_extended.field_mrp_equipment____last_update
 #: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop____last_update
 #: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop_reason____last_update
 #: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop_type____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Modifiée le"
 
 #. module: mrp_extended
-#: model:ir.model.fields,field_description:mrp_extended.field_mrp_equipment__write_uid
 #: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop__write_uid
 #: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop_reason__write_uid
 #: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop_type__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Dernière date de modification"
 
 #. module: mrp_extended
-#: model:ir.model.fields,field_description:mrp_extended.field_mrp_equipment__write_date
 #: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop__write_date
 #: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop_reason__write_date
 #: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop_type__write_date
@@ -240,12 +250,6 @@ msgstr "Démarrer tous les OT"
 #. module: mrp_extended
 #: model:ir.model,name:mrp_extended.model_mrp_bom_line
 msgid "MRP Bom line extended"
-msgstr ""
-
-#. module: mrp_extended
-#: model:ir.actions.act_window,name:mrp_extended.action_mrp_equipment
-#: model:ir.model,name:mrp_extended.model_mrp_equipment
-msgid "MRP Equipment"
 msgstr ""
 
 #. module: mrp_extended
@@ -268,12 +272,12 @@ msgstr "Fabrication raison d'arrêt"
 #. module: mrp_extended
 #: model:ir.model,name:mrp_extended.model_mrp_workorder
 msgid "MRP Work Order extended"
-msgstr ""
+msgstr "MRP Extension de l'OF"
 
 #. module: mrp_extended
 #: model:ir.model,name:mrp_extended.model_mrp_production
 msgid "MRP production extended"
-msgstr ""
+msgstr "MRP extension Production"
 
 #. module: mrp_extended
 #: model:ir.model,name:mrp_extended.model_mrp_workcenter_productivity_loss
@@ -287,7 +291,6 @@ msgid "Manufacturing Order"
 msgstr "Ordre de fabrication"
 
 #. module: mrp_extended
-#: model:ir.model.fields,field_description:mrp_extended.field_mrp_equipment__name
 #: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop_reason__name
 #: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop_type__name
 msgid "Name"
@@ -323,11 +326,6 @@ msgid "Reason"
 msgstr "Raison"
 
 #. module: mrp_extended
-#: model:ir.model.fields,field_description:mrp_extended.field_mrp_equipment__serial
-msgid "Serial"
-msgstr "Numéro de série"
-
-#. module: mrp_extended
 #: code:addons/mrp_extended/models/mrp_production.py:0
 #, python-format
 msgid ""
@@ -357,7 +355,7 @@ msgstr "Date de début"
 #. module: mrp_extended
 #: model:ir.model,name:mrp_extended.model_stock_move
 msgid "Stock move extended"
-msgstr "Mouvement de stock étendu"
+msgstr ""
 
 #. module: mrp_extended
 #: model_terms:ir.ui.view,arch_db:mrp_extended.mrp_stop_form
@@ -368,6 +366,30 @@ msgstr "Ligne d'arrêt"
 #: model:ir.ui.menu,name:mrp_extended.mrp_stop_reason_menu
 msgid "Stop Reason"
 msgstr "Raison de l'arrêt"
+
+#. module: mrp_extended
+#: code:addons/mrp_extended/models/mrp_production.py:0
+#: code:addons/mrp_extended/models/mrp_production.py:0
+#, python-format
+msgid ""
+"Stop Reason Error: Your break end date must be betwenn the production "
+"period."
+msgstr ""
+"Raison d'arrêt: Votre date d'arrêt doit être comprise dans la période "
+"de production"
+
+#. module: mrp_extended
+#: code:addons/mrp_extended/models/mrp_production.py:0
+#, python-format
+msgid "Stop Reason Error: Your must define the break line period"
+msgstr ""
+"Raison d'arrêt: Vous devez définir une période d'arrêt"
+
+#. module: mrp_extended
+#: code:addons/mrp_extended/models/mrp_production.py:0
+#, python-format
+msgid "Stop Reason Error: Your must first set the production périod"
+msgstr "Raison d'arrêt: Vous devez d'abord définir la période de production"
 
 #. module: mrp_extended
 #: model:ir.ui.menu,name:mrp_extended.mrp_stop_type_menu
@@ -396,13 +418,6 @@ msgid "Stop type"
 msgstr "Type d'arrêt"
 
 #. module: mrp_extended
-#: code:addons/mrp_extended/models/mrp_production.py:0
-#, python-format
-msgid ""
-"The production start date must not be greater than the production end date."
-msgstr "La date de début de la production doit être inférieure à la date de fin de la production"
-
-#. module: mrp_extended
 #: model:ir.model.fields,help:mrp_extended.field_stock_move__product_uom_qty
 msgid ""
 "This is the quantity of products from an inventory point of view. For moves "
@@ -425,15 +440,3 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:mrp_extended.mrp_extend_production_form_view
 msgid "Type"
 msgstr "Nature"
-
-#. module: mrp_extended
-#: code:addons/mrp_extended/models/mrp_production.py:0
-#, python-format
-msgid "You cannot proceed! Production end date is mandatory."
-msgstr "Bien vouloir saisir la date de fin de la production avant de confirmer"
-
-#. module: mrp_extended
-#: code:addons/mrp_extended/models/mrp_production.py:0
-#, python-format
-msgid "You cannot proceed! Production start date is mandatory."
-msgstr "Bien vouloir saisir la date de début de la production avant de confirmer"
