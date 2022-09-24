@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 
+from tracemalloc import start
 from odoo import api, fields, models, _
 from odoo.exceptions import AccessError, UserError, ValidationError
+
 
 class MrpStopType(models.Model):
     _name = "mrp.stop.type"
@@ -66,3 +68,55 @@ class MrpStop(models.Model):
         # if self.end_date and self.production_id.start_date and self.production_id.end_date:
             # if self.production_id.start_date <= self.end_date <=  self.production_id.end_date:
                 # raise ValidationError(_("La periode raison d'arret doit etre dans la periode de l'ordre de fabrication."))
+
+    @api.onchange('start_date')
+    def _onchange_start_date(self):
+        for line in self:
+            if line.start_date:
+                if line.start_date < line.production_id.start_date:
+                        line.start_date = False
+                        raise UserError(_("A break start date must be between the production period"))
+    
+    @api.onchange('end_date')
+    def _onchange_end_date(self):
+        for line in self:
+            if line.end_date:
+                if line.end_date > line.production_id.end_date:
+                    line.end_date = False
+                    raise UserError(_("A break start date must be between the production period"))
+
+    # @api.model
+    # def create(self, vals):
+    #   res = super(MrpStop, self).create(vals)
+    #   if res.production_id.start_date and res.production_id.end_date:
+    #     if res.start_date:
+    #       if res.start_date < res.production_id.start_date or res.start_date > res.production_id.end_date:
+    #         raise UserError(_("Your break start date must be between the production period."))
+    #       else:
+    #         return res
+    #     elif res.end_date:
+    #       if res.end_date < res.production_id.start_date or res.end_date > res.production_id.end_date:
+    #         raise UserError(_("Your break end date must be between the production period."))
+    #       else:
+    #         return res
+    #     else:
+    #       return res
+    #   else:
+    #     raise UserError(_("Your must first set the production period"))
+    
+    # @api.model
+    # def write(self, vals):
+    #   res = super(MrpStop, self).write(vals)
+    #   if self.production_id.start_date and self.production_id.end_date:
+    #     if self.start_date:
+    #       if self.start_date > self.production_id.start_date and self.start_date < self.production_id.end_date:
+    #         return res
+    #       else:
+    #         raise UserError(_("Your break end date must be betwenn the production period."))
+    #     if self.end_date:
+    #       if self.end_date > self.production_id.start_date and self.end_date < self.production_id.end_date:
+    #         return res
+    #       else:
+    #         raise UserError(_("Your break end date must be betwenn the production period."))
+    #   else:
+    #     raise UserError(_("Your must first set the production period"))

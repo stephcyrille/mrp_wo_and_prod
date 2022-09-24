@@ -33,6 +33,24 @@ class MrpProduction(models.Model):
             #     raise UserError(_("You cannot proceed! Production end date is mandatory."))
             # if production.end_date < production.start_date:
             #     raise UserError(_("The production start date must not be greater than the production end date."))
+            if len(production.block_reasons_ids) > 0:
+                for bR in production.block_reasons_ids:
+                    if production.start_date and production.end_date:
+                        if bR.start_date is False or bR.end_date is False: 
+                            raise UserError(_("Stop Reason Error: Your must define the break line period"))
+                        if bR.start_date:
+                            if bR.start_date > production.start_date and bR.start_date < production.end_date:
+                                return True
+                            else:
+                                raise UserError(_("Stop Reason Error: Your break end date must be betwenn the production period."))
+                        if bR.end_date:
+                            if bR.end_date > production.start_date and bR.end_date < production.end_date:
+                                return True
+                            else:
+                                raise UserError(_("Stop Reason Error: Your break end date must be betwenn the production period."))
+                    else:
+                        raise UserError(_("Stop Reason Error: Your must first set the production period"))
+
             if production.bom_id:
                 production.consumption = production.bom_id.consumption
             # In case of Serial number tracking, force the UoM to the UoM of product
