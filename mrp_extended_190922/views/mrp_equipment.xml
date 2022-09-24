@@ -1,0 +1,16 @@
+<odoo>
+    <menuitem
+          id="mrp_equipment_menu"
+          name="Equipment"
+          sequence="3"
+          parent="mrp_stop_menu"
+          action="maintenance.hr_equipment_action"
+      />
+      <menuitem
+          id="mrp_equipment_category_menu"
+          name="Catégories d'équipment"
+          sequence="4"
+          parent="mrp_stop_menu"
+          action="maintenance.hr_equipment_category_action"
+      />
+</odoo>

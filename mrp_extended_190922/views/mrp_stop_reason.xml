@@ -1,0 +1,24 @@
+<odoo>
+  <record id="mrp_stop_reason_tree_editable_view" model="ir.ui.view">
+        <field name="name">mrp.stop.reason.tree</field>
+        <field name="model">mrp.stop.reason</field>
+        <field name="arch" type="xml">
+            <tree editable="top">
+                <field name="name" required="1" />
+                <field name="label" />
+            </tree>
+        </field>
+    </record>
+    <record id="action_mrp_stop_reason" model="ir.actions.act_window">
+        <field name="name">Stop reason</field>
+        <field name="res_model">mrp.stop.reason</field>
+        <field name="view_mode">tree</field>
+    </record>
+    <menuitem
+          id="mrp_stop_reason_menu"
+          name="Stop Reason"
+          sequence="2"
+          parent="mrp_stop_menu"
+          action="action_mrp_stop_reason"
+      />
+</odoo>

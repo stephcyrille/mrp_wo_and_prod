@@ -1,0 +1,439 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* mrp_extended
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-08-29 13:44+0000\n"
+"PO-Revision-Date: 2022-08-29 13:44+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mrp_extended
+#: model:ir.actions.report,print_report_name:mrp_extended.action_report_production_order_end
+msgid "'Production Order (end) - %s' % object.name"
+msgstr "'Ordre de Production (fin) - %s' % object.name"
+
+#. module: mrp_extended
+#: model_terms:ir.ui.view,arch_db:mrp_extended.report_mrporder_after
+msgid ""
+"<span>\n"
+"                                Consumed Products\n"
+"                            </span>"
+msgstr ""
+"<span>\n"
+"                                Produits consommés\n"
+"                            </span>"
+
+#. module: mrp_extended
+#: model_terms:ir.ui.view,arch_db:mrp_extended.report_mrporder_before
+msgid ""
+"<span>\n"
+"                            Products to Consume\n"
+"                        </span>"
+msgstr ""
+"<span>\n"
+"                            Produits à consommer\n"
+"                        </span>"
+
+#. module: mrp_extended
+#: model_terms:ir.ui.view,arch_db:mrp_extended.report_mrporder_after
+msgid "<span>Operations Done</span>"
+msgstr "<span>Opération Terminée</span>"
+
+#. module: mrp_extended
+#: model_terms:ir.ui.view,arch_db:mrp_extended.report_mrporder_before
+msgid "<span>Operations Planned</span>"
+msgstr "<span>Operations planifiées</span>"
+
+#. module: mrp_extended
+#: model_terms:ir.ui.view,arch_db:mrp_extended.report_mrporder_after
+#: model_terms:ir.ui.view,arch_db:mrp_extended.report_mrporder_before
+msgid "<strong>Description:</strong><br/>"
+msgstr ""
+
+#. module: mrp_extended
+#: model_terms:ir.ui.view,arch_db:mrp_extended.report_mrporder_after
+#: model_terms:ir.ui.view,arch_db:mrp_extended.report_mrporder_before
+msgid "<strong>Finished Product:</strong><br/>"
+msgstr "<strong>Produit fini:</strong><br/>"
+
+#. module: mrp_extended
+#: model_terms:ir.ui.view,arch_db:mrp_extended.report_mrporder_after
+#: model_terms:ir.ui.view,arch_db:mrp_extended.report_mrporder_before
+msgid "<strong>No. Of Minutes</strong>"
+msgstr "<strong>Nbre de min.</strong>"
+
+#. module: mrp_extended
+#: model_terms:ir.ui.view,arch_db:mrp_extended.report_mrporder_after
+#: model_terms:ir.ui.view,arch_db:mrp_extended.report_mrporder_before
+msgid "<strong>Operation</strong>"
+msgstr "<strong>Opération</strong>"
+
+#. module: mrp_extended
+#: model_terms:ir.ui.view,arch_db:mrp_extended.report_mrporder_after
+#: model_terms:ir.ui.view,arch_db:mrp_extended.report_mrporder_before
+msgid "<strong>Quantity to Produce:</strong><br/>"
+msgstr "<strong>Quantité à produire:</strong><br/>"
+
+#. module: mrp_extended
+#: model_terms:ir.ui.view,arch_db:mrp_extended.report_mrporder_after
+#: model_terms:ir.ui.view,arch_db:mrp_extended.report_mrporder_before
+msgid "<strong>Responsible:</strong><br/>"
+msgstr "<strong>Responsable:</strong><br/>"
+
+#. module: mrp_extended
+#: model_terms:ir.ui.view,arch_db:mrp_extended.report_mrporder_after
+#: model_terms:ir.ui.view,arch_db:mrp_extended.report_mrporder_before
+msgid "<strong>Source Document:</strong><br/>"
+msgstr "<strong>Document d'origine:</strong><br/>"
+
+#. module: mrp_extended
+#: model_terms:ir.ui.view,arch_db:mrp_extended.report_mrporder_after
+#: model_terms:ir.ui.view,arch_db:mrp_extended.report_mrporder_before
+msgid "<strong>WorkCenter</strong>"
+msgstr "<strong>Poste de travail</strong>"
+
+#. module: mrp_extended
+#: model_terms:ir.ui.view,arch_db:mrp_extended.report_mrporder_after
+#: model_terms:ir.ui.view,arch_db:mrp_extended.report_mrporder_before
+msgid "Barcode"
+msgstr "Code Barre"
+
+#. module: mrp_extended
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_equipment__brand
+msgid "Brand"
+msgstr "Marque"
+
+#. module: mrp_extended
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_equipment__create_uid
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop__create_uid
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop_reason__create_uid
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop_type__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: mrp_extended
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_equipment__create_date
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop__create_date
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop_reason__create_date
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop_type__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: mrp_extended
+#: model:ir.model.fields,help:mrp_extended.field_mrp_stop__start_date
+#: model:ir.model.fields,help:mrp_extended.field_mrp_workcenter_productivity_loss__start_date
+msgid "Date at which you have started bloc production."
+msgstr "Date de début de l'arrêt des traveaux"
+
+#. module: mrp_extended
+#: model:ir.model.fields,help:mrp_extended.field_mrp_production__start_date
+msgid "Date at which you really start the production."
+msgstr "Date de début de la production"
+
+#. module: mrp_extended
+#: model:ir.model.fields,help:mrp_extended.field_mrp_production__end_date
+msgid "Date at which you will finish the production."
+msgstr "Date de fin de la production"
+
+#. module: mrp_extended
+#: model:ir.model.fields,help:mrp_extended.field_mrp_stop__end_date
+#: model:ir.model.fields,help:mrp_extended.field_mrp_workcenter_productivity_loss__end_date
+msgid "Date at which you will finish to bloc the production."
+msgstr "Date de fin de l'arrêt de production"
+
+#. module: mrp_extended
+#: model:ir.model.fields,field_description:mrp_extended.field_stock_move__product_uom_qty
+msgid "Demand"
+msgstr "Demande"
+
+#. module: mrp_extended
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_equipment__description
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop__description
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_workcenter_productivity_loss__description
+msgid "Description"
+msgstr ""
+
+#. module: mrp_extended
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_equipment__display_name
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop__display_name
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop_reason__display_name
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop_type__display_name
+msgid "Display Name"
+msgstr "Nom à afficher"
+
+#. module: mrp_extended
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_production__duration
+msgid "Duration"
+msgstr "Durée"
+
+#. module: mrp_extended
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_production__end_date
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop__end_date
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_workcenter_productivity_loss__end_date
+msgid "End Date"
+msgstr "Date de fin"
+
+#. module: mrp_extended
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop__equipment_id
+#: model:ir.ui.menu,name:mrp_extended.mrp_equipment_menu
+#: model_terms:ir.ui.view,arch_db:mrp_extended.mrp_equipment_form
+#: model_terms:ir.ui.view,arch_db:mrp_extended.mrp_extend_production_form_view
+msgid "Equipment"
+msgstr "Equipement"
+
+#. module: mrp_extended
+#: model:ir.model.fields,field_description:mrp_extended.field_stock_move__forecast_availability
+msgid "Forecast Availability"
+msgstr "Prévision de disponibilité"
+
+#. module: mrp_extended
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_equipment__id
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop__id
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop_reason__id
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop_type__id
+msgid "ID"
+msgstr ""
+
+#. module: mrp_extended
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop_reason__label
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop_type__label
+msgid "Label"
+msgstr "Etiquette"
+
+#. module: mrp_extended
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_equipment____last_update
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop____last_update
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop_reason____last_update
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop_type____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: mrp_extended
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_equipment__write_uid
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop__write_uid
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop_reason__write_uid
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop_type__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: mrp_extended
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_equipment__write_date
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop__write_date
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop_reason__write_date
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop_type__write_date
+msgid "Last Updated on"
+msgstr "Dernière date de modification"
+
+#. module: mrp_extended
+#: model_terms:ir.ui.view,arch_db:mrp_extended.mrp_extend_production_form_view
+msgid "Lauch all WO"
+msgstr "Démarrer tous les OT"
+
+#. module: mrp_extended
+#: model:ir.model,name:mrp_extended.model_mrp_bom_line
+msgid "MRP Bom line extended"
+msgstr ""
+
+#. module: mrp_extended
+#: model:ir.actions.act_window,name:mrp_extended.action_mrp_equipment
+#: model:ir.model,name:mrp_extended.model_mrp_equipment
+msgid "MRP Equipment"
+msgstr ""
+
+#. module: mrp_extended
+#: model:ir.actions.act_window,name:mrp_extended.action_mrp_stop
+#: model:ir.model,name:mrp_extended.model_mrp_stop
+#: model:ir.ui.menu,name:mrp_extended.mrp_stop_menu
+msgid "MRP Stop"
+msgstr ""
+
+#. module: mrp_extended
+#: model:ir.model,name:mrp_extended.model_mrp_stop_type
+msgid "MRP Stop Type"
+msgstr ""
+
+#. module: mrp_extended
+#: model:ir.model,name:mrp_extended.model_mrp_stop_reason
+msgid "MRP Stop reason"
+msgstr "Fabrication raison d'arrêt"
+
+#. module: mrp_extended
+#: model:ir.model,name:mrp_extended.model_mrp_workorder
+msgid "MRP Work Order extended"
+msgstr ""
+
+#. module: mrp_extended
+#: model:ir.model,name:mrp_extended.model_mrp_production
+msgid "MRP production extended"
+msgstr ""
+
+#. module: mrp_extended
+#: model:ir.model,name:mrp_extended.model_mrp_workcenter_productivity_loss
+msgid "MRP workcenter productivity loss extended"
+msgstr ""
+
+#. module: mrp_extended
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop__production_id
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_workcenter_productivity_loss__production_id
+msgid "Manufacturing Order"
+msgstr "Ordre de fabrication"
+
+#. module: mrp_extended
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_equipment__name
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop_reason__name
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop_type__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: mrp_extended
+#: model_terms:ir.ui.view,arch_db:mrp_extended.report_mrporder_after
+#: model_terms:ir.ui.view,arch_db:mrp_extended.report_mrporder_before
+msgid "Product"
+msgstr "Produit"
+
+#. module: mrp_extended
+#: model:ir.actions.report,name:mrp_extended.action_report_production_order_end
+msgid "Production Order End"
+msgstr "Ordre de production Fini"
+
+#. module: mrp_extended
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_bom_line__product_qty
+#: model_terms:ir.ui.view,arch_db:mrp_extended.report_mrporder_after
+#: model_terms:ir.ui.view,arch_db:mrp_extended.report_mrporder_before
+msgid "Quantity"
+msgstr "Quantité"
+
+#. module: mrp_extended
+#: model:ir.model.fields,field_description:mrp_extended.field_stock_move__quantity_done
+msgid "Quantity Done"
+msgstr "Quantité traitée"
+
+#. module: mrp_extended
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop__stop_reason_id
+#: model_terms:ir.ui.view,arch_db:mrp_extended.mrp_extend_production_form_view
+msgid "Reason"
+msgstr "Raison"
+
+#. module: mrp_extended
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_equipment__serial
+msgid "Serial"
+msgstr "Numéro de série"
+
+#. module: mrp_extended
+#: code:addons/mrp_extended/models/mrp_production.py:0
+#, python-format
+msgid ""
+"Some work orders are already done, you cannot launch all the WO of this "
+"manufacturing order."
+msgstr ""
+"Certains ordres de travail ont deja été cloturées, vous ne pouvez pas "
+"démarrer tous les ordres de travail de cet ordre de fabrication"
+
+#. module: mrp_extended
+#: code:addons/mrp_extended/models/mrp_production.py:0
+#, python-format
+msgid ""
+"Some work orders have already started, you cannot launch all the WO of this "
+"manufacturing order."
+msgstr ""
+"Certains ordres de travail sont déja entamés, vous ne pouvez pas démarrer "
+"tous les ordres de travail de cet ordre de fabrication"
+
+#. module: mrp_extended
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_production__start_date
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop__start_date
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_workcenter_productivity_loss__start_date
+msgid "Start Date"
+msgstr "Date de début"
+
+#. module: mrp_extended
+#: model:ir.model,name:mrp_extended.model_stock_move
+msgid "Stock move extended"
+msgstr "Mouvement de stock étendu"
+
+#. module: mrp_extended
+#: model_terms:ir.ui.view,arch_db:mrp_extended.mrp_stop_form
+msgid "Stop Line"
+msgstr "Ligne d'arrêt"
+
+#. module: mrp_extended
+#: model:ir.ui.menu,name:mrp_extended.mrp_stop_reason_menu
+msgid "Stop Reason"
+msgstr "Raison de l'arrêt"
+
+#. module: mrp_extended
+#: model:ir.ui.menu,name:mrp_extended.mrp_stop_type_menu
+msgid "Stop Type"
+msgstr "Nature de l'arrêt"
+
+#. module: mrp_extended
+#: model:ir.ui.menu,name:mrp_extended.mrp_stop_line_menu
+msgid "Stop line"
+msgstr "Ligne darrêt"
+
+#. module: mrp_extended
+#: model:ir.actions.act_window,name:mrp_extended.action_mrp_stop_reason
+msgid "Stop reason"
+msgstr "Raison d'arrêt"
+
+#. module: mrp_extended
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_production__block_reasons_ids
+#: model_terms:ir.ui.view,arch_db:mrp_extended.mrp_extend_production_form_view
+msgid "Stop reasons"
+msgstr "Raisons d'arrêt"
+
+#. module: mrp_extended
+#: model:ir.actions.act_window,name:mrp_extended.action_mrp_stop_type
+msgid "Stop type"
+msgstr "Type d'arrêt"
+
+#. module: mrp_extended
+#: code:addons/mrp_extended/models/mrp_production.py:0
+#, python-format
+msgid ""
+"The production start date must not be greater than the production end date."
+msgstr "La date de début de la production doit être inférieure à la date de fin de la production"
+
+#. module: mrp_extended
+#: model:ir.model.fields,help:mrp_extended.field_stock_move__product_uom_qty
+msgid ""
+"This is the quantity of products from an inventory point of view. For moves "
+"in the state 'done', this is the quantity of products that were actually "
+"moved. For other moves, this is the quantity of product that is planned to "
+"be moved. Lowering this quantity does not generate a backorder. Changing "
+"this quantity on assigned moves affects the product reservation, and should "
+"be done with care."
+msgstr ""
+"Ceci est la quantité d'articles depuis le point de vue de l'inventaire. Pour"
+" les mouvements dans l'état \"Terminé\", c'est la quantité d'articles qui a "
+"été effectivement déplacée. Pour les autres mouvements, c'est la quantité "
+"d'articles qu'il est prévu de déplacer. Abaisser cette quantité ne génère "
+"pas de reliquat. La modification de cette quantité sur les mouvements "
+"assignés affecte la réservation de marchandise, et doit être faite avec "
+"soin."
+
+#. module: mrp_extended
+#: model:ir.model.fields,field_description:mrp_extended.field_mrp_stop__stop_type_id
+#: model_terms:ir.ui.view,arch_db:mrp_extended.mrp_extend_production_form_view
+msgid "Type"
+msgstr "Nature"
+
+#. module: mrp_extended
+#: code:addons/mrp_extended/models/mrp_production.py:0
+#, python-format
+msgid "You cannot proceed! Production end date is mandatory."
+msgstr "Bien vouloir saisir la date de fin de la production avant de confirmer"
+
+#. module: mrp_extended
+#: code:addons/mrp_extended/models/mrp_production.py:0
+#, python-format
+msgid "You cannot proceed! Production start date is mandatory."
+msgstr "Bien vouloir saisir la date de début de la production avant de confirmer"

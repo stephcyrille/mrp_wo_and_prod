@@ -1,0 +1,51 @@
+<odoo>
+  <record model="ir.ui.view" id="mrp_extend_workorder_form_view">
+    <field name="name">mrp.production.work.order.tree.editable</field>
+    <field name="model">mrp.workorder</field>
+    <field name="mode">primary</field>
+    <field name="priority" eval="1"/>
+    <field name="inherit_id" ref="mrp.mrp_production_workorder_tree_editable_view"/>
+    <field name="arch" type="xml">
+        <button name="button_start" position="replace">
+          <attribute name="invisible">
+            1
+          </attribute>
+        </button>
+        <button name="button_pending" position="attributes">
+          <attribute name="invisible">
+            1
+          </attribute>
+        </button>
+        <button name="button_finish" position="attributes">
+          <attribute name="invisible">
+            1
+          </attribute>
+        </button>
+        <button name="%(mrp.act_mrp_block_workcenter_wo)d" position="attributes">
+          <attribute name="invisible">
+            1
+          </attribute>
+        </button>
+        <button name="button_unblock" position="attributes">
+          <attribute name="invisible">
+            1
+          </attribute>
+        </button>
+        <button name="action_open_wizard" position="attributes">
+          <attribute name="invisible">
+            1
+          </attribute>
+        </button>
+        <field name="show_json_popover" position="attributes">
+          <attribute name="invisible">
+            1
+          </attribute>
+        </field>
+        <field name="json_popover" position="attributes">
+          <attribute name="invisible">
+            1
+          </attribute>
+        </field>
+    </field>
+  </record>
+</odoo>
