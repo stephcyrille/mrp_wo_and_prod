@@ -40,14 +40,15 @@
         <page string="Stop reasons" name="block_reasons" groups="mrp.group_mrp_routings">
           <field name="block_reasons_ids" attrs="{'readonly': [('state', 'in', ['cancel', 'done'])]}">
             <tree editable="bottom">
-				<field name="equipment_id" string="Equipment"/>
-				<field name="description"/>
-				<field name="stop_reason_id" string="Cause"/>
-				<field name="stop_type_id" string="Nature"/>
-				<field name="start_date"/>
-				<field name="end_date"/>
-				<!-- <field name="intervention_id" domain="[('equipment_id', '=', equipment_id),('state', 'in', ('draft', 'confirmed', 'progress', 'to_close'))]"/> -->
-				<field name="intervention_id" domain="[('equipment_id', '=', equipment_id)]"/>
+              <field name="stop_type_id" string="Nature"/>
+	      <field name="stop_reason_id" string="Cause"/>
+              <field name="description"/>
+              <field name="equipment_id" string="Equipment"/>
+              <field name="start_date"/>
+              <field name="end_date"/>
+	      <field name="intervention_id" domain="[('equipment_id', '=', equipment_id)]"/>
+              <field name="team_id"/>
+              <field name="quarter_id"/>
             </tree>
           </field>
         </page>

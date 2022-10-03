@@ -22,7 +22,7 @@
     'version': '15.0',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'mrp', 'queue_job', 'maintenance'],
+    'depends': ['base', 'mrp', 'queue_job', 'maintenance', 'hr'],
 
     # always loaded
     'data': [
@@ -34,6 +34,8 @@
         'views/mrp_stop.xml',
         'views/mrp_production_pivot_views.xml',
         'views/mrp_bom_views.xml',
+        'views/mrp_quarter_menu.xml',
+        'views/mrp_team_menu.xml',
         #'views/mrp_workorder.xml',
 
         'report/mrp_report_view_extended.xml',
