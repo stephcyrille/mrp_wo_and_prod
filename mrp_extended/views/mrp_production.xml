@@ -46,6 +46,8 @@
               <field name="equipment_id" string="Equipment"/>
               <field name="start_date"/>
               <field name="end_date"/>
+              <field name="team_id"/>
+              <field name="quarter_id"/>
             </tree>
           </field>
         </page>

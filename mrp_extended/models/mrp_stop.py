@@ -31,6 +31,8 @@ class MrpStop(models.Model):
     stop_reason_id = fields.Many2one('mrp.stop.reason', string='Reason', ondelete='cascade', required=True)
     description = fields.Text("Description")
     equipment_id = fields.Many2one('maintenance.equipment', string='Equipment', ondelete='cascade', required=True)
+    team_id = fields.Many2one('mrp.stop.team', string='Team')
+    quarter_id = fields.Many2one('mrp.stop.quarter', string='Quarter')
     start_date = fields.Datetime('Start Date', help="Date at which you have started bloc production.")
     end_date = fields.Datetime('End Date', help="Date at which you will finish to bloc the production.")
     production_id = fields.Many2one('mrp.production', string='Manufacturing Order', ondelete='cascade')
