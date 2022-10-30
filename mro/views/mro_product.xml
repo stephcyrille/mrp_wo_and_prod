@@ -1,0 +1,24 @@
+<odoo>
+  <record id="mro_product_template_form" model="ir.ui.view">
+      <field name="name">product.template.form.inherit</field>
+      <field name="model">product.template</field>
+      <field name="inherit_id" ref="product.product_template_only_form_view" />
+      <field name="arch" type="xml">
+        <xpath expr="//page[@name='general_information']" position="after">
+          <page name="piece_detail" string="Piece details">
+              <group>
+                <group>
+                  <field name="kind_of_part" />
+                  <field name="equipment" />
+                </group>
+                <group>
+                  <field name="vendor_ref" />
+                  <field name="manufactor" />
+                </group>
+              </group>
+          </page>
+        </xpath>
+      </field>
+    </record>
+</odoo>
+

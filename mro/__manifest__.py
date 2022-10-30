@@ -52,6 +52,7 @@ Required modules:
         'views/report_mro_order.xml',
         'views/report_mro_request.xml',
         'views/mro_workorder_view.xml',
+        'views/mro_product.xml',
     ],
     'application': True,
 }

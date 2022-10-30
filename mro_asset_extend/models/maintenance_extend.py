@@ -26,6 +26,8 @@ class MaintenanceEquipmentExtent(models.Model):
     _inherit = 'maintenance.equipment'
 
     code = fields.Char('Code', tracking=True, readonly=True, index=True, copy=False, default="New")
+    vendor_ref = fields.Char("Vendor reference")
+    manufactoring_date = fields.Date("Manufactoring date")
 
     @api.model
     def create(self, vals):

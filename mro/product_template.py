@@ -14,3 +14,8 @@ class ProductTemplate(models.Model):
     _inherit = "product.template"
 
     isParts = fields.Boolean('Can be Part')
+    kind_of_part = fields.Selection([('generic', 'Generic'), ('specific', 'Specific')], 
+                                    string='Kind part', default='generic')
+    equipment = fields.Many2one("maintenance.equipment", string='Equipment')
+    vendor_ref = fields.Char("Vendor reference")
+    manufactor = fields.Char("Manufactor")
