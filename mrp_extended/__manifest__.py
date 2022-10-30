@@ -36,6 +36,7 @@
         'views/mrp_bom_views.xml',
         'views/mrp_quarter_menu.xml',
         'views/mrp_team_menu.xml',
+        'views/mrp_production_equipe.xml',
         #'views/mrp_workorder.xml',
 
         'report/mrp_report_view_extended.xml',

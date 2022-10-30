@@ -1,0 +1,31 @@
+<odoo>
+  <record id="mrp_stop_type_tree_editable_view" model="ir.ui.view">
+        <field name="name">mrp.stop.type.tree</field>
+        <field name="model">mrp.stop.type</field>
+        <field name="arch" type="xml">
+            <tree editable="top">
+                <field name="name" required="1" />
+                <field name="label" />
+            </tree>
+        </field>
+    </record>
+    <record id="action_mrp_stop_type" model="ir.actions.act_window">
+        <field name="name">Stop type</field>
+        <field name="res_model">mrp.stop.type</field>
+        <field name="view_mode">tree</field>
+    </record>
+    <menuitem
+        id="mrp_stop_menu"
+        name="MRP Stop"
+        sequence="28"
+        groups="mrp.group_mrp_user,mrp.group_mrp_manager"
+        parent="mrp.menu_mrp_root"
+    />
+    <menuitem
+          id="mrp_stop_type_menu"
+          name="Stop Type"
+          sequence="1"
+          parent="mrp_stop_menu"
+          action="action_mrp_stop_type"
+      />
+</odoo>

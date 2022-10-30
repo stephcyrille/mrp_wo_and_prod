@@ -1,0 +1,117 @@
+<odoo>
+  <record id="mrp_production_equipe_list_view" model="ir.ui.view">
+        <field name="name">mrp.production_equipe.tree</field>
+        <field name="model">mrp.production_equipe</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="team_id" />
+                <field name="quarter_id" />
+                <field name="product_qty" />
+                <field name="start_date" />
+                <field name="end_date" />
+				<field name="description" />
+                <field name="user_id" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="mrp_production_equipe_form" model="ir.ui.view">
+      <field name="name">mrp.production_equipe.form</field>
+      <field name="model">mrp.production_equipe</field>
+      <field name="arch" type="xml">
+        <form string="Stop Line">
+          <sheet>
+            <group>
+              <group>
+                <field name="team_id" />
+                <field name="quarter_id" />
+                <field name="product_qty" />
+              </group>
+              <group>
+                <field name="production_id" />
+                <field name="start_date" />
+                <field name="end_date" />
+
+              </group>
+            </group>
+            <group>
+              <field name="description" />
+			  <field name="user_id" />
+            </group>
+          </sheet>
+		  <div class="oe_chatter">
+				<field name="message_follower_ids"/>
+				<field name="activity_ids"/>
+				<field name="message_ids"/>
+			</div>
+        </form>
+      </field>
+    </record>
+	
+	<record id="view_production_equipe_calendar" model="ir.ui.view">
+            <field name="name">mrp.production_equipe.calendar</field>
+            <field name="model">mrp.production_equipe</field>
+            <field eval="2" name="priority"/>
+            <field name="arch" type="xml">
+                <calendar date_start="start_date" date_stop="end_date"
+                          string=" Période equipe" event_limit="5" quick_add="False">
+                    <field name="user_id" avatar_field="avatar_128"/>
+                    <field name="team_id"/>
+                    <field name="product_qty"/>
+                </calendar>
+            </field>
+        </record>
+
+        <record id="view_production_equipe_pivot" model="ir.ui.view">
+            <field name="name">mrp.production_equipe.pivot</field>
+            <field name="model">mrp.production_equipe</field>
+            <field name="arch" type="xml">
+                <pivot string="Manufacturing Orders" sample="1">
+                    <field name="team_id" type="row"/>
+                </pivot>
+            </field>
+        </record>
+
+        <record id="view_production_graph" model="ir.ui.view">
+            <field name="name">mrp.production_equipe.graph</field>
+            <field name="model">mrp.production_equipe</field>
+            <field name="arch" type="xml">
+                <graph string="Manufacturing Orders" stacked="0" sample="1">
+                    <field name="team_id"/>
+                    <field name="product_qty" type="measure"/>
+                </graph>
+            </field>
+        </record>
+
+        <record id="view_mrp_production_equipe_filter" model="ir.ui.view">
+            <field name="name">mrp.production_equipe.select</field>
+            <field name="model">mrp.production_equipe</field>
+            <field name="arch" type="xml">
+                <search string="Search Equipe">
+                    <field name="team_id"/>
+                    <field name="quarter_id"/>
+                    <separator/>
+                    <group expand="0" string="Group By...">
+                        <filter string="Equipe" name="team_id" domain="[]" context="{'group_by': 'team_id'}"/>
+                        <filter string="Quart" name="quarter_id" domain="[]" context="{'group_by': 'quarter_id'}"/>
+                    </group>
+               </search>
+            </field>
+        </record>
+
+    <record id="action_mrp_production_equipe" model="ir.actions.act_window">
+        <field name="name">Production par équipe</field>
+        <field name="res_model">mrp.production_equipe</field>
+        <!-- <field name="view_mode">mrp.production_equipe</field> -->
+		<field name="view_mode">tree,form,calendar,pivot,graph</field>
+		<field name="search_view_id" ref="view_mrp_production_equipe_filter"/>
+    </record>
+
+    <menuitem
+          id="mrp_production_equipe_menu"
+          name="Production par équipe"
+          sequence="5"
+          parent="mrp_stop_menu"
+          action="action_mrp_production_equipe"
+      />
+</odoo>

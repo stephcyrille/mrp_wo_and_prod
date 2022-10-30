@@ -15,6 +15,7 @@ class MrpProduction(models.Model):
     duration = fields.Char(
         'Duration', compute='_compute_duration', readonly=True, store=True, copy=False)
     block_reasons_ids = fields.One2many('mrp.stop', 'production_id', 'Stop reasons')
+    production_equipe_ids = fields.One2many('mrp.production_equipe', 'production_id', 'Production par equipe')
 
     @api.depends('start_date', 'end_date')
     def _compute_duration(self):
@@ -33,6 +34,16 @@ class MrpProduction(models.Model):
             #     raise UserError(_("You cannot proceed! Production end date is mandatory."))
             # if production.end_date < production.start_date:
             #     raise UserError(_("The production start date must not be greater than the production end date."))
+            stock = False
+            product_name = ' '
+            for product in production.move_raw_ids:
+                # print ('le produit la est',product.product_id.name ,' ', product.product_id.qty_available,' ',product.product_uom_qty)
+                if product.product_id.qty_available <= 0 or product.product_id.qty_available < product.product_uom_qty:
+                    product_name += ', '+str(product.product_id.name)           
+                    stock = True
+            if stock == True:
+                raise UserError(_(u'Le où les produit %s ne sont pas suffisamment disponibles en stock.', product_name))
+                
             if len(production.block_reasons_ids) > 0:
                 for bR in production.block_reasons_ids:
                     if production.start_date and production.end_date:

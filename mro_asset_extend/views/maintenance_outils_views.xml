@@ -1,0 +1,47 @@
+<odoo>
+  <data>
+	
+	
+	<record id="maintenance_outil_list_view" model="ir.ui.view">
+        <field name="name">maintenance.outil.tree</field>
+        <field name="model">maintenance.outil</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="label" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="maintenance_outil_form" model="ir.ui.view">
+      <field name="name">maintenance.outil.form</field>
+      <field name="model">maintenance.outil</field>
+      <field name="arch" type="xml">
+        <form string="Stop Line">
+          <sheet>
+              <group>
+                <field name="name" />
+                <field name="label" />
+              </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="action_maintenance_outil" model="ir.actions.act_window">
+        <field name="name">Outils</field>
+        <field name="res_model">maintenance.outil</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+          id="maintenance_outil_menu"
+          sequence="5"
+          parent="maintenance.menu_maintenance_configuration"
+          action="action_maintenance_outil"
+      />
+	
+
+			
+  </data>
+</odoo>

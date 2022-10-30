@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_mrp_stop_type,mrp_stop_type,model_mrp_stop_type,base.group_user,1,1,1,1
+access_mrp_stop_reason,mrp_stop_reason,model_mrp_stop_reason,base.group_user,1,1,1,1
+access_mrp_stop,mrp_stop,model_mrp_stop,base.group_user,1,1,1,1
+access_mrp_stop_team,mrp_stop_team,model_mrp_stop_team,base.group_user,1,1,1,1
+access_mrp_stop_quarter,mrp_stop_quarter,model_mrp_stop_quarter,base.group_user,1,1,1,1

@@ -1,0 +1,29 @@
+<odoo>
+  <record id="mrp_decoupa_production_form_view" model="ir.ui.view">
+    <field name="name">mrp.production.extended.form</field>
+    <field name="model">mrp.production</field>
+    <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
+    <field name="arch" type="xml">
+	
+      <button name="action_cancel" position="after">
+			<button name="%(mrp_extend_custom.action_decoupage_mrp)d" type="action" class="oe_highlight" string="production partiel"  attrs="{'invisible': [('state', 'not in', ('progress', 'confirmed'))]}"/>
+			<button name="action_send_to_draft" type="object" string="Mettre à l'état brouillon" attrs="{'invisible': [('state', 'in', ('draft', 'done'))]}"/>
+      </button>
+
+
+      <page name="finished_products" position="after">
+        <page string="Production exécuté" name="block_reasons" groups="mrp.group_mrp_routings">
+          <field name="decoupage_ids" attrs="{'readonly': [('state', 'in', ['cancel', 'done'])]}">
+            <tree editable="bottom" create='0'>
+				<field name="lot_id"/>
+				<field name="qty_decoupage" />
+				<field name="location_dest_id"/>
+				<field name="picking_id"/>
+            </tree>
+          </field>
+        </page>
+      </page>
+
+    </field>
+  </record>
+</odoo>

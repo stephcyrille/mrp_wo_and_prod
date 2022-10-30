@@ -1,0 +1,16 @@
+<odoo>
+  <data>
+
+    <record id="maintenace_equipement_code" model="ir.sequence">
+      <field name="name">Code de l'équipement</field>
+      <field name="code">maintenance.equipment</field>
+      <field name="active">TRUE</field>
+      <field name="prefix">EQUIP%(y)s%(month)s%(day)s/</field>
+      <field name="number_increment">1</field>
+      <field name="number_next">1</field>
+      <field name="padding">3</field>
+      <field name="implementation">standard</field>
+    </record>
+
+  </data>
+</odoo>

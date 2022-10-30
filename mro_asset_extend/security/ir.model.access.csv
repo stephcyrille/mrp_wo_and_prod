@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_maintenance_mode_operatoi,mro_asset_extend.maintenance_mode_operatoi,model_maintenance_mode_operatoi,asset.group_mro_user,1,1,1,1
+access_maintenance_outil,mro_asset_extend.maintenance_outil,model_maintenance_outil,asset.group_mro_user,1,1,1,1

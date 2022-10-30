@@ -1,0 +1,48 @@
+<odoo>
+  <data>
+	
+	<menuitem name="États des équipements"
+            action="asset.action_asset_state"
+            id="asset.menu_asset_state"
+            parent="maintenance.menu_maintenance_configuration"
+            groups="asset.group_mro_manager"
+            sequence="100"/>
+	
+	<menuitem name="Étiquettes"
+		action="asset.action_asset_category"
+		id="asset.menu_asset_category"
+		parent="maintenance.menu_maintenance_configuration"
+		groups="asset.group_mro_manager"
+		sequence="100"
+	/>
+	
+	
+	<menuitem name="Tâches "
+            id="mro.menu_maintenance_tasks_extend"
+            parent="maintenance.menu_maintenance_title"
+			groups="asset.group_mro_user"
+            sequence="9"/>
+
+	<menuitem name="Tâches "
+		action="mro.action_tasks"
+		id="mro.menu_maintenance_tasks_tasks"
+		parent="mro.menu_maintenance_tasks_extend"
+		sequence="100"/>
+	
+	<menuitem name="Pièces"
+            id="mro.menu_maintenance_parts"
+            parent="maintenance.menu_maintenance_title"
+            groups="asset.group_mro_user"
+            sequence="9"/>
+	
+	<menuitem name="Pièces"
+            action="mro.part_action"
+            id="mro.menu_maintenance_parts_parts"
+            parent="mro.menu_maintenance_parts"
+            sequence="100"/>
+	
+	
+
+			
+  </data>
+</odoo>

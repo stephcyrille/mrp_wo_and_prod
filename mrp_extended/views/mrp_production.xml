@@ -12,6 +12,11 @@
                         ('state', '!=', 'to_close')]}" />
       </button>
 
+      <!-- <xpath expr="//page[@name='finished_products']/field[@name='move_byproduct_ids']//tree//field[@name='bom_id']" position="replace"> -->
+      <xpath expr="//field[@name='move_byproduct_ids']/tree/field[@name='product_uom_qty']" position="replace">
+          <field name="product_uom_qty" string="To Produce" force_save="1" />
+      </xpath>
+
       <xpath expr="//field[@name='bom_id']" position="after">
           <xpath expr="//field[@name='user_id']" position="move"/>
           <xpath expr="//field[@name='company_id']" position="move"/>
@@ -36,21 +41,35 @@
         <field name="duration" />
       </xpath>
 
-      <page name="operations" position="after">
+      <page name="finished_products" position="after">
         <page string="Stop reasons" name="block_reasons" groups="mrp.group_mrp_routings">
-          <field name="block_reasons_ids" attrs="{'readonly': [('state', 'in', ['cancel', 'done'])]}">
-            <tree editable="bottom">
-              <field name="stop_type_id" string="Nature"/>
-	      <field name="stop_reason_id" string="Cause"/>
-              <field name="description"/>
-              <field name="equipment_id" string="Equipment"/>
-              <field name="start_date"/>
-              <field name="end_date"/>
-	      <field name="intervention_id" domain="[('equipment_id', '=', equipment_id)]"/>
-              <field name="team_id"/>
-              <field name="quarter_id"/>
-            </tree>
-          </field>
+			<field name="block_reasons_ids" attrs="{'readonly': [('state', 'in', ['cancel', 'done'])]}">
+				<tree editable="bottom">
+				  <field name="stop_type_id" string="Nature"/>
+				  <field name="stop_reason_id" string="Cause"/>
+				  <field name="description"/>
+				  <field name="equipment_id" string="Equipment"/>
+				  <field name="start_date"/>
+				  <field name="end_date"/>
+				  <field name="intervention_id" domain="[('equipment_id', '=', equipment_id)]"/>
+				  <field name="team_id"/>
+				  <field name="quarter_id"/>
+				  <field name="user_id"/>
+				</tree>
+			</field>
+        </page>
+        <page string="Production par Equipe" name="production_equipe" groups="mrp.group_mrp_routings">
+			<field name="production_equipe_ids" attrs="{'readonly': [('state', 'in', ['cancel', 'done'])]}">
+				<tree editable="bottom">
+					<field name="team_id" />
+					<field name="quarter_id" />
+					<field name="product_qty" />
+					<field name="start_date" />
+					<field name="end_date" />
+					<field name="description" />
+					<field name="user_id" />
+				</tree>
+			</field>
         </page>
       </page>
 

@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_mrp.decoupege_execut,mrp.decoupege_execut,model_mrp_decoupege_execut,,1,1,1,0
+access_mrp_decoupade_wizard,mrp.decoupade_wizard,model_mrp_decoupade_wizard,,1,1,1,0

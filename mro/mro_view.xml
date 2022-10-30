@@ -368,6 +368,8 @@
                         <field name="category_id"/>
                         <field name="maintenance_type"/>
                         <field name="active"/>
+                        <field name="demande_maintenance_id"/>
+						
                     </group>
                     <notebook>
                         <page string="Parts">

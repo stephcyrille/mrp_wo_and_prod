@@ -4,3 +4,4 @@ access_mrp_stop_reason,mrp_stop_reason,model_mrp_stop_reason,base.group_user,1,1
 access_mrp_stop,mrp_stop,model_mrp_stop,base.group_user,1,1,1,1
 access_mrp_stop_team,mrp_stop_team,model_mrp_stop_team,base.group_user,1,1,1,1
 access_mrp_stop_quarter,mrp_stop_quarter,model_mrp_stop_quarter,base.group_user,1,1,1,1
+access_mrp_production_equipe,production_equipe,model_mrp_production_equipe,base.group_user,1,1,1,1

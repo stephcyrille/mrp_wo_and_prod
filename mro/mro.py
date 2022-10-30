@@ -239,6 +239,7 @@ class mro_task(models.Model):
 
     name = fields.Char('Description', size=64, required=True, translate=True)
     category_id = fields.Many2one('asset.category', 'Asset Category', ondelete='restrict', required=True)
+    demande_maintenance_id = fields.Many2one('maintenance.request', 'Maintenance', ondelete='restrict', required=False)
     maintenance_type = fields.Selection(MAINTENANCE_TYPE_SELECTION, 'Maintenance Type', required=True, default='cm')
     parts_lines = fields.One2many('mro.task.parts.line', 'task_id', 'Parts')
     tools_description = fields.Text('Tools Description',translate=True)

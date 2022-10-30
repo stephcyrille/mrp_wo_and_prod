@@ -8,3 +8,4 @@ from . import mrp_workcenter
 from . import stock_move
 from . import mrp_stop
 from . import mrp_team
+from . import mrp_production_equipe

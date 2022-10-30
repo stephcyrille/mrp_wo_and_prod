@@ -1,0 +1,35 @@
+<odoo>
+  <data>
+	
+	<record id="hr_equipment_view_form" model="ir.ui.view">
+        <field name="name">equipment.form</field>
+        <field name="model">maintenance.equipment</field>
+        <field name="inherit_id" ref="maintenance.hr_equipment_view_form" />
+        <field name="arch" type="xml">
+		
+			<sheet position="before">
+				<header>
+					<field name="maintenance_state_id" widget="statusbar" clickable="True" groups="asset.group_mro_user"/>
+				</header>
+			</sheet>
+            <!-- <div name="button_box" position="inside">
+                <button
+                    name="preview_child_list"
+                    type="object"
+                    class="oe_stat_button"
+                    icon="fa-sitemap"
+                >
+                    <field string="Children" name="child_count" widget="statinfo" />
+                </button>
+            </div>
+            <field name="category_id" position="before">
+                <field
+                    name="parent_id"
+                    readonly="not context.get('parent_id_editable', True)"
+                />
+            </field> -->
+        </field>
+    </record>
+			
+  </data>
+</odoo>
