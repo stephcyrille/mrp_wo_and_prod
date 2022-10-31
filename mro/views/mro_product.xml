@@ -5,7 +5,7 @@
       <field name="inherit_id" ref="product.product_template_only_form_view" />
       <field name="arch" type="xml">
         <xpath expr="//page[@name='general_information']" position="after">
-          <page name="piece_detail" string="Piece details">
+          <page name="piece_detail" string="Piece / Tool details"  attrs="{'invisible': [('isParts','=',False),('isTools','=',False)]}">
               <group>
                 <group>
                   <field name="kind_of_part" />

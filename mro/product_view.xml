@@ -11,6 +11,8 @@
                     <div>
                         <field name="isParts"/>
                         <label for="isParts"/>
+                        <field name="isTools"/>
+                        <label for="isTools"/>
                     </div>
                 </xpath>
             </field>

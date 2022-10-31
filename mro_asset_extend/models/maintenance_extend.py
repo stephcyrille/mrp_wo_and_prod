@@ -27,7 +27,15 @@ class MaintenanceEquipmentExtent(models.Model):
 
     code = fields.Char('Code', tracking=True, readonly=True, index=True, copy=False, default="New")
     vendor_ref = fields.Char("Vendor reference")
+    equipment_type_id = fields.Many2one("maintenance.equipment.type", string="Type")
     manufactoring_date = fields.Date("Manufactoring date")
+    weight = fields.Float("Weight (in Kg)", default=0)
+    length = fields.Float("Length (in m)", default=0)
+    width = fields.Float("Width (in m)", default=0)
+    height = fields.Float("Height (in m)", default=0)
+    capability = fields.Char(string='Capability')
+    attachment = fields.Binary(string='Attachment')
+    link = fields.Char(string='Link', default='https://www.odoo.com')
 
     @api.model
     def create(self, vals):

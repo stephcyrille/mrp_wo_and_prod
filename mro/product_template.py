@@ -19,3 +19,4 @@ class ProductTemplate(models.Model):
     equipment = fields.Many2one("maintenance.equipment", string='Equipment')
     vendor_ref = fields.Char("Vendor reference")
     manufactor = fields.Char("Manufactor")
+    isTools = fields.Boolean('Can be a tool')

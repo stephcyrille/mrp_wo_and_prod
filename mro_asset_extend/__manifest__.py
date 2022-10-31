@@ -31,6 +31,8 @@
         'views/maintenance_equipement_views.xml',
         'views/templates.xml',
         'data/sequence.xml',
+        'views/maintenance_team.xml',
+        'views/equipment_type.xml',
     ],
     # only loaded in demonstration mode
     # 'demo': [

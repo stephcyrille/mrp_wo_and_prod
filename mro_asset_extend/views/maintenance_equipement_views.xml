@@ -1,67 +1,68 @@
 <odoo>
   <data>
 	
-	<record id="hr_equipment_view_form" model="ir.ui.view">
-        <field name="name">equipment.form</field>
-        <field name="model">maintenance.equipment</field>
-        <field name="inherit_id" ref="maintenance.hr_equipment_view_form" />
-        <field name="arch" type="xml">
-		
-			<sheet position="before">
-				<header>
-					<field name="maintenance_state_id" widget="statusbar" clickable="True" groups="asset.group_mro_user"/>
-				</header>
-			</sheet>
-
-            <!-- <div name="button_box" position="inside">
-                <button
-                    name="preview_child_list"
-                    type="object"
-                    class="oe_stat_button"
-                    icon="fa-sitemap"
-                >
-                    <field string="Children" name="child_count" widget="statinfo" />
-                </button>
-            </div>
-            <field name="category_id" position="before">
-                <field
-                    name="parent_id"
-                    readonly="not context.get('parent_id_editable', True)"
-                />
-            </field> -->
-
-            <field name="name" position="after">
-                <br/>
-                <span class="o_form_label">Code</span>
-                <h1 class="mt0">
-                    <field 
-                        name="code" 
-                        placeholder="Equipment code" />
-                </h1>
-            </field>
-          
-          <field name="partner_ref" position="after">
-              <field name="vendor_ref"  />
-          </field>
-          
-          <field name="effective_date" position="after">
-              <field name="manufactoring_date"  />
-          </field>
-        </field>
-    </record>
-
-    <!-- <record id="maintenance_equipment_view_kanban" model="ir.ui.view">
+    <record id="hr_equipment_view_form" model="ir.ui.view">
       <field name="name">equipment.form</field>
       <field name="model">maintenance.equipment</field>
-      <field name="inherit_id" ref="maintenance.hr_equipment_view_kanban" />
+      <field name="inherit_id" ref="maintenance.hr_equipment_view_form" />
       <field name="arch" type="xml">
-        <xpath expr="//div[@class='oe_kanban_content']" position="before">
-          <div class="o_kanban_image mr-1">
-              <img t-att-src="kanban_image('product.template', 'image_128', record.id.raw_value)" alt="Product" class="o_image_64_contain"/>
-          </div>
+      
+        <sheet position="before">
+          <header>
+            <field name="maintenance_state_id" widget="statusbar" clickable="True" groups="asset.group_mro_user"/>
+          </header>
+        </sheet>
+
+        <field name="name" position="after">
+          <br/>
+          <span class="o_form_label">Code</span>
+          <h1 class="mt0">
+            <field 
+              name="code" 
+              placeholder="Equipment code" />
+          </h1>
+        </field>
+            
+        <xpath expr="//field[@name='location']" position="attributes">
+          <attribute name="required">
+            1
+          </attribute>
+        </xpath>
+
+        <field name="category_id" position="after">
+          <field name="equipment_type_id"  />
+        </field>
+            
+        <!-- <xpath expr="//field[@name='department_id']" position="attributes">
+          <attribute name="attrs">
+            {'required': [('equipment_assign_to','=','department')]}
+          </attribute>
+        </xpath> -->
+        
+        <field name="partner_ref" position="after">
+          <field name="vendor_ref"  />
+        </field>
+        
+        <field name="effective_date" position="after">
+          <field name="manufactoring_date"  />
+        </field>
+
+        <xpath expr="//page[@name='product_information']/group" position="after">
+          <group name="design" string="Design">
+            <group name='capacity' string="Capacity">
+              <field name='weight' />
+              <field name='length' />
+              <field name='width' />
+              <field name='height' />
+            </group>
+            <group name='capabilities' string='Equipment capabilities'>
+              <field name='capability' />
+              <field name='attachment' />
+              <field name='link' />
+            </group>
+          </group>
         </xpath>
       </field>
-    </record> -->
-			
+    </record>	
   </data>
 </odoo>
