@@ -261,27 +261,28 @@ class mro_task_parts_line(models.Model):
     parts_qty = fields.Float('Quantity', digits=dp.get_precision('Product Unit of Measure'), required=True, default=1.0)
     parts_uom = fields.Many2one('uom.uom', 'Unit of Measure', required=True)
     task_id = fields.Many2one('mro.task', 'Maintenance Task')
+    plan_id = fields.Many2one('maintenance.plan', 'Maintenance Plan')
 
     @api.onchange('parts_id')
     def onchange_parts(self):
         self.parts_uom = self.parts_id.uom_id.id
 
-    def unlink(self):
-        self.write({'task_id': False})
-        return True
+    # def unlink(self):
+    #     self.write({'task_id': False})
+    #     return True
 
-    @api.model
-    def create(self, values):
-        ids = self.search([('task_id','=',values['task_id']),('parts_id','=',values['parts_id'])])
-        if len(ids)>0:
-            values['parts_qty'] = ids[0].parts_qty + values['parts_qty']
-            ids[0].write(values)
-            return ids[0]
-        ids = self.search([('task_id','=',False)])
-        if len(ids)>0:
-            ids[0].write(values)
-            return ids[0]
-        return super(mro_task_parts_line, self).create(values)
+    # @api.model
+    # def create(self, values):
+    #     ids = self.search([('parts_id','=',values['parts_id'])])
+    #     if len(ids)>0:
+    #         values['parts_qty'] = ids[0].parts_qty + values['parts_qty']
+    #         ids[0].write(values)
+    #         return ids[0]
+    #     ids = self.search([('task_id','=',False)])
+    #     if len(ids)>0:
+    #         ids[0].write(values)
+    #         return ids[0]
+    #     return super(mro_task_parts_line, self).create(values)
 
 
 class MaintenancePlan(models.Model):
@@ -291,6 +292,8 @@ class MaintenancePlan(models.Model):
     _inherit = 'maintenance.plan'
 
     tools_ids = fields.One2many('mro.task.tools.line', 'plan_id', 'Maintenance tools')
+    parts_ids = fields.One2many('mro.task.parts.line', 'plan_id', 'Maintenance parts')
+    operating_mode = fields.Text("Description")
 
 
 class MroTaskToolsLine(models.Model):
@@ -308,22 +311,22 @@ class MroTaskToolsLine(models.Model):
     def onchange_parts(self):
         self.parts_uom = self.parts_id.uom_id.id
 
-    def unlink(self):
-        self.write({'task_id': False})
-        return True
+    # def unlink(self):
+    #     self.write({'task_id': False})
+    #     return True
 
-    @api.model
-    def create(self, values):
-        ids = self.search([('task_id','=',values['task_id']),('parts_id','=',values['parts_id'])])
-        if len(ids)>0:
-            values['parts_qty'] = ids[0].parts_qty + values['parts_qty']
-            ids[0].write(values)
-            return ids[0]
-        ids = self.search([('task_id','=',False)])
-        if len(ids)>0:
-            ids[0].write(values)
-            return ids[0]
-        return super(MroTaskToolsLine, self).create(values)
+    # @api.model
+    # def create(self, values):
+    #     ids = self.search([('parts_id','=',values['parts_id'])])
+    #     if len(ids)>0:
+    #         values['parts_qty'] = ids[0].parts_qty + values['parts_qty']
+    #         ids[0].write(values)
+    #         return ids[0]
+    #     ids = self.search([('task_id','=',False)])
+    #     if len(ids)>0:
+    #         ids[0].write(values)
+    #         return ids[0]
+    #     return super(MroTaskToolsLine, self).create(values)
 
 
 class mro_request(models.Model):

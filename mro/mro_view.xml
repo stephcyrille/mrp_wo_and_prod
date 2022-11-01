@@ -419,15 +419,29 @@
             <field name="model">maintenance.plan</field>
             <field name="arch" type="xml">
                 <page name="instructions" position="after">
-                    <page string="Operating mode" name="operating_mode">
-                        <field name="tools_ids" nolabel="1" context="{'default_categ_id': context.get('default_categ_id')}">
+                    <page string="Pièces" name="parts">
+                        <field name="parts_ids" nolabel="1" context="{'default_categ_id': context.get('default_categ_id')}">
                             <tree string="Tools" editable="bottom">
-                                <field name="parts_id" string="Tool" domain="[('isTools','=','True')]" context="{'default_categ_id': context.get('default_categ_id')}"/>
+                                <field name="parts_id" string="Pièce" domain="[('isParts','=','True')]" context="{'default_categ_id': context.get('default_categ_id')}"/>
                                 <field name="parts_qty" string="quantity" />
                                 <field name="parts_uom" groups="uom.group_uom"/>
                                 <field name="name"/>
                             </tree>
                         </field>
+                    </page>
+                    <page string="Outils" name="tools">
+                        <field name="tools_ids" nolabel="1" context="{'default_categ_id': context.get('default_categ_id')}">
+                            <tree string="Tools" editable="bottom">
+                                <field name="parts_id" string="Outil" domain="[('isTools','=','True')]" context="{'default_categ_id': context.get('default_categ_id')}"/>
+                                <field name="parts_qty" string="quantity" />
+                                <field name="parts_uom" groups="uom.group_uom"/>
+                                <field name="name"/>
+                            </tree>
+                        </field>
+                    </page>
+                    <page string="Mode d'emploi" name="operating_mode">
+                        <label for="operating_mode" />
+                        <field name="operating_mode" widget="html" />
                     </page>
                 </page>
             </field>
