@@ -8,12 +8,12 @@
           <page name="piece_detail" string="Piece / Tool details"  attrs="{'invisible': [('isParts','=',False),('isTools','=',False)]}">
               <group>
                 <group>
-                  <field name="kind_of_part" />
-                  <field name="equipment" />
+                  <field name="kind_of_part" string="Type de pièce" />
+                  <field name="equipment" string="Equipement" attrs="{'required': [('kind_of_part','=','specific')]}" />
                 </group>
                 <group>
-                  <field name="vendor_ref" />
-                  <field name="manufactor" />
+                  <field name="vendor_ref" string="Reférence fournisseur" />
+                  <field name="manufactor" string="Fabriquant" />
                 </group>
               </group>
           </page>

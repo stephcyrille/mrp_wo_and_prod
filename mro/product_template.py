@@ -13,12 +13,12 @@ class ProductTemplate(models.Model):
     _name = "product.template"
     _inherit = "product.template"
 
-    isParts = fields.Boolean('Can be Part')
-    kind_of_part = fields.Selection([('generic', 'Generic'), ('specific', 'Specific')], 
+    isParts = fields.Boolean('Est une pièce')
+    kind_of_part = fields.Selection([('generic', 'Générique'), ('specific', 'Spécifique')], 
                                     string='Kind part', default='generic')
-    equipment = fields.Many2one("maintenance.equipment", string='Equipment')
-    vendor_ref = fields.Char("Vendor reference")
-    manufactor = fields.Char("Manufactor")
-    isTools = fields.Boolean('Can be a tool')
+    equipment = fields.Many2one("maintenance.equipment", string='Equipement')
+    vendor_ref = fields.Char("Reférence du fournisseur")
+    manufactor = fields.Char("Fabricant")
+    isTools = fields.Boolean('Est un outil')
     maintenance_plan_id = fields.Many2one("maintenance.plan")
     wo_id = fields.Many2one("mro.task")

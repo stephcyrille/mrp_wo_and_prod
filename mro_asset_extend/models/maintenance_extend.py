@@ -8,6 +8,7 @@ class MroModeOperatoir(models.Model):
     _description = "Mode operatoire de la maintenance "
     _rec_name = "name"
 
+    code = fields.Char("Code")
     name = fields.Char("Nom du mode")
     label = fields.Char("Description")
 
