@@ -64,5 +64,35 @@
         </xpath>
       </field>
     </record>	
+
+
+    <!-- <record id="hr_equipment_view_kanban" model="ir.ui.view">
+      <field name="name">equipment.kanban</field>
+      <field name="model">maintenance.equipment</field>
+      <field name="inherit_id" ref="maintenance.hr_equipment_view_kanban" />
+      <field name="arch" type="xml">
+        <field name="name" position="after">
+          <field name="picture" />
+        </field>
+        <xpath expr="//div[hasclass('oe_kanban_content')]" position="replace">
+          <div class="oe_kanban_details">
+            <div class="row">
+              
+              <div class="col-md-3">
+                <div class="o_kanban_image">
+                  <img t-att-src="kanban_image('test.test', 'picture', record.id.raw_value)" alt="Product" class="o_image_64_contain"/>
+                </div>
+              </div>
+                  
+              <div class="col-md-5">
+                <strong><field name="name"/></strong>
+                <div name="tags"/>
+              </div>
+              
+            </div>
+          </div> 
+        </xpath>
+      </field>
+    </record>	 -->
   </data>
 </odoo>

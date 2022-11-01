@@ -35,6 +35,7 @@ class MaintenanceEquipmentExtent(models.Model):
     height = fields.Float("Height (in m)", default=0)
     capability = fields.Char(string='Capability')
     attachment = fields.Binary(string='Attachment')
+    picture = fields.Binary(string='Image')
     link = fields.Char(string='Link', default='https://www.odoo.com')
 
     @api.model
