@@ -86,6 +86,7 @@ class MaintenancePlan(models.Model):
         compute="_compute_maintenance_count", string="Current Maintenance", store=True
     )
     maintenance_team_id = fields.Many2one("maintenance.team")
+    user_id = fields.Many2one('res.users', string="Responsible")
 
     def name_get(self):
         result = []

@@ -58,7 +58,7 @@
             <group name='capabilities' string='Equipment capabilities'>
               <field name='capability' />
               <field name='attachment' />
-              <field name='link' />
+              <field name='link' widget="website_urls" />
             </group>
           </group>
         </xpath>

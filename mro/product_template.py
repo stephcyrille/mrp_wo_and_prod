@@ -20,3 +20,5 @@ class ProductTemplate(models.Model):
     vendor_ref = fields.Char("Vendor reference")
     manufactor = fields.Char("Manufactor")
     isTools = fields.Boolean('Can be a tool')
+    maintenance_plan_id = fields.Many2one("maintenance.plan")
+    wo_id = fields.Many2one("mro.task")

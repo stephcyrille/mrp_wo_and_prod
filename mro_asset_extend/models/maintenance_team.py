@@ -4,7 +4,7 @@ from odoo import models, fields, api
 from odoo import tools
 
 
-class MroModeOperatoir(models.Model):
+class MaintenaceTeamState(models.Model):
     _name = "maintenance.team.state"
     _description = "Maintenance team state "
     _rec_name = "name"

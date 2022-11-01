@@ -53,6 +53,7 @@ Required modules:
         'views/report_mro_request.xml',
         'views/mro_workorder_view.xml',
         'views/mro_product.xml',
+        'views/maintenance_defect_views.xml',
     ],
     'application': True,
 }

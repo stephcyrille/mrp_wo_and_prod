@@ -21,3 +21,7 @@ access_stock_move_mro_user,stock.move mro_user,stock.model_stock_move,asset.grou
 access_stock_picking_mro_user,stock.picking mro_user,stock.model_stock_picking,asset.group_mro_user,1,1,1,1
 access_mro_request_customer,mro.request customer,model_mro_request,asset.group_mro_customer,1,1,0,0
 access_mro_request_create,mro.request create,model_mro_request,mro.group_create_maintenance_request,0,0,1,0
+access_maintenance_defect_state,mro.maintenance_defect_state,mro.model_maintenance_defect_state,asset.group_mro_user,1,1,1,1
+access_maintenance_defect,mro.maintenance_defect,mro.model_maintenance_defect,asset.group_mro_user,1,1,1,1
+
+access_mro_task_tools_line_manager,mro.task.tools.line manager,model_mro_task_tools_line,asset.group_mro_manager,1,1,1,1

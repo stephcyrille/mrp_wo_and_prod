@@ -7,3 +7,4 @@
 ##############################################################################
 
 from . import mro_workorder
+from . import maintenance_defect

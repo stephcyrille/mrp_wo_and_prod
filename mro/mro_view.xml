@@ -383,6 +383,14 @@
                             </field>
                         </page>
                         <page string="Tools">
+                            <field name="tools_ids" nolabel="1" context="{'default_categ_id': context.get('default_categ_id')}">
+                                <tree string="Tools" editable="bottom">
+                                    <field name="parts_id" domain="[('isTools','=','True')]" context="{'default_categ_id': context.get('default_categ_id')}"/>
+                                    <field name="parts_qty"/>
+                                    <field name="parts_uom" groups="uom.group_uom"/>
+                                    <field name="name"/>
+                                </tree>
+                            </field>
                             <separator string="Description for Tools"/>
                             <field name="tools_description" placeholder="Specify the tools and mechanisms needed for execute this order..."/>
                         </page>
@@ -395,12 +403,33 @@
                             <field name="operations_description" placeholder="Specify the jobs that need execute..."/>
                         </page>
                         <page string="Documentation">
-                            <separator string="Description for Documentation"/>
-                            <field name="documentation_description" placeholder="Specify the documentation useful when execute this order..."/>
+                            <field name="documentation_description" placeholder="Specify the documentation useful when execute this order..." widget="html_frame" nolabel="1" />
+                            <field name='attachment' />
+                            <field name='link' widget="website_urls" />
                         </page>
                     </notebook>
                 </sheet>
                 </form>
+            </field>
+        </record>
+        
+        <record id="maintenance_plan_form_view" model="ir.ui.view">
+            <field name="name">maintenance.plan.form.inherit</field>
+            <field name="inherit_id" ref="maintenance_plan.maintenance_plan_view_form" />
+            <field name="model">maintenance.plan</field>
+            <field name="arch" type="xml">
+                <page name="instructions" position="after">
+                    <page string="Operating mode" name="operating_mode">
+                        <field name="tools_ids" nolabel="1" context="{'default_categ_id': context.get('default_categ_id')}">
+                            <tree string="Tools" editable="bottom">
+                                <field name="parts_id" domain="[('isTools','=','True')]" context="{'default_categ_id': context.get('default_categ_id')}"/>
+                                <field name="parts_qty"/>
+                                <field name="parts_uom" groups="uom.group_uom"/>
+                                <field name="name"/>
+                            </tree>
+                        </field>
+                    </page>
+                </page>
             </field>
         </record>
 
@@ -417,7 +446,7 @@
             parent="base.menu_mro_root"
             sequence="9"/>
 
-        <menuitem name="Tasks"
+        <menuitem name="Work orders"
             action="action_tasks"
             id="menu_maintenance_tasks_tasks"
             parent="menu_maintenance_tasks"

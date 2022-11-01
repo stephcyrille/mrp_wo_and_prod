@@ -58,6 +58,7 @@
                                 name="maintenance_team_id"
                                 attrs="{'required': [('equipment_id', '=', False)]}"
                             />
+                            <field name="user_id"/>
                         </group>
                         <group>
                             <field
@@ -89,7 +90,7 @@
                         </group>
                     </group>
                     <notebook>
-                        <page string="Instructions">
+                        <page string="Instructions" name="instructions">
                             <field
                                 name="note"
                                 placeholder="Describe the maintenance to do..."

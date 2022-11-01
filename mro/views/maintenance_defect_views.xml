@@ -1,0 +1,165 @@
+<odoo>
+  <data>
+    <record id="maintenace_defect_state_list_view" model="ir.ui.view">
+      <field name="name">maintenance.defect.state.tree</field>
+      <field name="model">maintenance.defect.state</field>
+      <field name="arch" type="xml">
+          <tree>
+              <field name="sequence" />
+              <field name="name" />
+              <field name="label" />
+          </tree>
+      </field>
+    </record>
+
+    <record id="maintenance_defect_state_form" model="ir.ui.view">
+      <field name="name">maintenance.defect.state.form</field>
+      <field name="model">maintenance.defect.state</field>
+      <field name="arch" type="xml">
+        <form string="Maintenance defect state">
+          <sheet>
+              <group>
+                <field name="name" />
+                <field name="label" />
+                <field name="sequence" />
+              </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="action_maintenance_defect_state" model="ir.actions.act_window">
+        <field name="name">Defect state</field>
+        <field name="res_model">maintenance.defect.state</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+      id="maintenance_defect_state_menu"
+      sequence="6"
+      parent="maintenance.menu_maintenance_configuration"
+      action="action_maintenance_defect_state"
+    />
+
+    <!-- Maintenance defect start views -->
+    <record id="maintenance_defect_view_kanban" model="ir.ui.view">
+      <field name="name">maintenance.defect.kanban</field>
+      <field name="model">maintenance.defect</field>
+      <field name="arch" type="xml">
+        <kanban
+              default_order="creation_date desc"
+              default_group_by="state_id"
+              class="o_kanban_small_column o_kanban_project_tasks" 
+              archivable="false" 
+              js_class="crm_kanban" 
+              sample="1"
+              on_create="quick_create"
+          >
+          <field name="title"/>
+          <field name="user_id"/>
+          <field name="creation_date"/>
+          <progressbar field="activity_state" colors='{"planned": "success", "today": "warning", "overdue": "danger"}'/>
+          <templates>
+            <t t-name="kanban-box">
+              <div class="oe_kanban_content oe_kanban_global_click">
+                <div class="o_kanban_record_title">
+                  <strong><field name="title"/></strong>
+                </div>
+                <div class="o_kanban_record_subtitle">
+                  <field name="creation_date"/>
+                </div>
+                <div>
+                  <field name="priority" widget="priority"/>
+                  ->
+                  <field name="department_id"/>
+                  <br/>
+                  <br/>
+                  <field name="state_id" widget="badge"/>
+                  <br/>
+                </div>
+                <div class="o_kanban_record_bottom">
+                  <div class="oe_kanban_bottom_left">
+                    <!--field name="priority" widget="priority" /-->
+                    <field name="activity_ids" widget="kanban_activity"/>
+                  </div>
+                  <div class="oe_kanban_bottom_right">
+                    <field name="user_id" widget="many2one_avatar_user"/>
+                  </div>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+    
+    <!-- FORM VIEW -->
+    <record id="maintenance_defect_view_form" model="ir.ui.view">
+      <field name="name">maintenance.defect.form</field>
+      <field name="model">maintenance.defect</field>
+      <field name="arch" type="xml">
+        <form>
+          <header>
+            <button
+              string="Réinitialiser"
+              name="reset_action"
+              type="object"
+            />
+            <button
+              string="Confirmer"
+              name="set_confirmed_action"
+              type="object"
+              class="oe_highlight"
+            />
+            <button
+              string="Créer demande d'intervention"
+              name="create_i_req_action"
+              type="object"
+              class="oe_highlight"
+            />
+            <field name="state_id" widget="statusbar" />
+          </header>
+
+          <sheet>
+            <div class="oe_title">
+              <label for="title"/>
+              <h1><field name="title" string="Title" placeholder="Light Of"/></h1>
+            </div>
+
+            <group>
+              <group>
+                <field name="department_id" />
+                <field name="user_id" />
+                <field name="location" />
+                <field name="priority" widget="priority" />
+              </group>
+              <group>
+                <field name="creation_date"/>
+                <field name="validation_date" />
+                <field name="request_date" />
+              </group>
+            </group>
+            <group>
+              <field name="description" widget="text"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+
+    <record id="action_maintenance_defect_management" model="ir.actions.act_window">
+        <field name="name">Defect management</field>
+        <field name="res_model">maintenance.defect</field>
+        <field name="view_mode">kanban,tree,form</field>
+    </record>
+
+    <menuitem
+      id="menu_m_defect_management"
+      name="Defect management"
+      parent="maintenance.menu_maintenance_title"
+      groups="maintenance.group_equipment_manager,base.group_user"
+      action="action_maintenance_defect_management"
+      sequence="0"/>
+  </data>
+</odoo>
