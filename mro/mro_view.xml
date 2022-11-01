@@ -422,8 +422,8 @@
                     <page string="Operating mode" name="operating_mode">
                         <field name="tools_ids" nolabel="1" context="{'default_categ_id': context.get('default_categ_id')}">
                             <tree string="Tools" editable="bottom">
-                                <field name="parts_id" domain="[('isTools','=','True')]" context="{'default_categ_id': context.get('default_categ_id')}"/>
-                                <field name="parts_qty"/>
+                                <field name="parts_id" string="Tool" domain="[('isTools','=','True')]" context="{'default_categ_id': context.get('default_categ_id')}"/>
+                                <field name="parts_qty" string="quantity" />
                                 <field name="parts_uom" groups="uom.group_uom"/>
                                 <field name="name"/>
                             </tree>
