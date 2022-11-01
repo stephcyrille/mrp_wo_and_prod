@@ -382,10 +382,10 @@
                                 </tree>
                             </field>
                         </page>
-                        <page string="Tools">
+                        <page string="Liste d'outils">
                             <field name="tools_ids" nolabel="1" context="{'default_categ_id': context.get('default_categ_id')}">
                                 <tree string="Tools" editable="bottom">
-                                    <field name="parts_id" domain="[('isTools','=','True')]" context="{'default_categ_id': context.get('default_categ_id')}"/>
+                                    <field name="parts_id" string="Outil" domain="[('isTools','=','True')]" context="{'default_categ_id': context.get('default_categ_id')}"/>
                                     <field name="parts_qty"/>
                                     <field name="parts_uom" groups="uom.group_uom"/>
                                     <field name="name"/>
@@ -402,10 +402,10 @@
                             <separator string="Description for Operations"/>
                             <field name="operations_description" placeholder="Specify the jobs that need execute..."/>
                         </page>
-                        <page string="Documentation">
-                            <field name="documentation_description" placeholder="Specify the documentation useful when execute this order..." widget="html_frame" nolabel="1" />
-                            <field name='attachment' />
-                            <field name='link' widget="website_urls" />
+                        <page string="Mode opératoire">
+                            <field name="documentation_description" string="Document" placeholder="Specify the documentation useful when execute this order..." widget="html_frame" nolabel="1" />
+                            <field name='attachment' string="Pièce jointe" />
+                            <field name='link' string="Url" widget="website_urls" />
                         </page>
                     </notebook>
                 </sheet>
@@ -441,12 +441,12 @@
             <field name="context" eval="{'default_categ_id': ref('mro.product_category_mro')}"/>
         </record>
 
-        <menuitem name="Tasks"
+        <menuitem name="Ordre de travail"
             id="menu_maintenance_tasks"
             parent="base.menu_mro_root"
             sequence="9"/>
 
-        <menuitem name="Work orders"
+        <menuitem name="Ordre de travail"
             action="action_tasks"
             id="menu_maintenance_tasks_tasks"
             parent="menu_maintenance_tasks"
