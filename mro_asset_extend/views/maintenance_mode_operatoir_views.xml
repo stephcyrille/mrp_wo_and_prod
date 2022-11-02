@@ -21,8 +21,17 @@
         <form string="Stop Line">
           <sheet>
               <group>
-                <field name="code" />
-                <field name="name" />
+                <group>
+                  <field name="code" />
+                  <field name="name" />
+                </group>
+                <group>
+                  <field name="attachment" string="Pièce jointe" />
+                  <field name='link' widget="website_urls" string="Lien URL" />
+                </group>  
+              </group>
+              <group>
+                <labe for="label" />
                 <field name="label" widget="html" />
               </group>
           </sheet>

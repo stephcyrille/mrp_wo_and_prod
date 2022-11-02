@@ -17,3 +17,6 @@ class MaintenanceRequest(models.Model):
         string="Maintenance plan", comodel_name="maintenance.plan", ondelete="restrict"
     )
     note = fields.Html()
+    source_document = fields.Char('Document d\'origine')
+    maintenance_team_id = fields.Many2one('maintenance.team', string='Team', required=False, check_company=True)
+    

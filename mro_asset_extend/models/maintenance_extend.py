@@ -11,6 +11,8 @@ class MroModeOperatoir(models.Model):
     code = fields.Char("Code")
     name = fields.Char("Nom du mode")
     label = fields.Char("Description")
+    attachment = fields.Binary(string='Attachment')
+    link = fields.Char(string='Link', default='https://www.odoo.com')
 
 
 class MroOutils(models.Model):
@@ -38,6 +40,9 @@ class MaintenanceEquipmentExtent(models.Model):
     attachment = fields.Binary(string='Attachment')
     picture = fields.Binary(string='Image')
     link = fields.Char(string='Link', default='https://www.odoo.com')
+    location_ids = fields.One2many(
+        "maintenance.equipment.location", "equipment_id", string="Utilisé sur les lieux"
+    )
 
     @api.model
     def create(self, vals):

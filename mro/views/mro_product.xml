@@ -12,7 +12,7 @@
                   <field name="equipment" string="Equipement" attrs="{'required': [('kind_of_part','=','specific')]}" />
                 </group>
                 <group>
-                  <field name="vendor_ref" string="Reférence fournisseur" />
+                  <field name="vendor_ref" string="Reférence fournisseur" required="1" />
                   <field name="manufactor" string="Fabriquant" />
                 </group>
               </group>

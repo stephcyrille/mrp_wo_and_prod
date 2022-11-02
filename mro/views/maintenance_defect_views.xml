@@ -8,6 +8,7 @@
               <field name="sequence" />
               <field name="name" />
               <field name="label" />
+              <field name="is_last" />
           </tree>
       </field>
     </record>
@@ -22,6 +23,7 @@
                 <field name="name" />
                 <field name="label" />
                 <field name="sequence" />
+                <field name="is_last" />
               </group>
           </sheet>
         </form>
@@ -29,7 +31,7 @@
     </record>
 
     <record id="action_maintenance_defect_state" model="ir.actions.act_window">
-        <field name="name">Defect state</field>
+        <field name="name">Etats des anomalies</field>
         <field name="res_model">maintenance.defect.state</field>
         <field name="view_mode">tree,form</field>
     </record>
@@ -56,7 +58,7 @@
               on_create="quick_create"
           >
           <field name="title"/>
-          <field name="user_id"/>
+          <field name="from_user_id"/>
           <field name="creation_date"/>
           <progressbar field="activity_state" colors='{"planned": "success", "today": "warning", "overdue": "danger"}'/>
           <templates>
@@ -70,8 +72,7 @@
                 </div>
                 <div>
                   <field name="priority" widget="priority"/>
-                  ->
-                  <field name="department_id"/>
+                  <field name="from_department_id"/>
                   <br/>
                   <br/>
                   <field name="state_id" widget="badge"/>
@@ -83,7 +84,7 @@
                     <field name="activity_ids" widget="kanban_activity"/>
                   </div>
                   <div class="oe_kanban_bottom_right">
-                    <field name="user_id" widget="many2one_avatar_user"/>
+                    <field name="from_user_id" widget="many2one_avatar_user"/>
                   </div>
                 </div>
               </div>
@@ -100,24 +101,12 @@
       <field name="arch" type="xml">
         <form>
           <header>
-            <button
-              string="Réinitialiser"
-              name="reset_action"
-              type="object"
+            <field 
+              name="state_id" 
+              widget="statusbar" 
+              options="{'clickable':1}" 
+              groups="asset.group_mro_user" 
             />
-            <button
-              string="Confirmer"
-              name="set_confirmed_action"
-              type="object"
-              class="oe_highlight"
-            />
-            <button
-              string="Créer demande d'intervention"
-              name="create_i_req_action"
-              type="object"
-              class="oe_highlight"
-            />
-            <field name="state_id" widget="statusbar" />
           </header>
 
           <sheet>
@@ -128,19 +117,23 @@
 
             <group>
               <group>
-                <field name="department_id" />
-                <field name="user_id" />
-                <field name="location" />
-                <field name="priority" widget="priority" />
+                <field name="from_department_id" attrs="{'readonly': [('is_lock', '=', True)]}" />
+                <field name="from_user_id" attrs="{'readonly': [('is_lock', '=', True)]}" />
+                <field name="to_department_id" attrs="{'readonly': [('is_lock', '=', True)]}" />
+                <field name="to_user_id" attrs="{'readonly': [('is_lock', '=', True)]}" />
+                <field name="location_id" attrs="{'readonly': [('is_lock', '=', True)]}" />
+                <field name="equipment_id" attrs="{'readonly': [('is_lock', '=', True)]}" />
               </group>
               <group>
+                <field name="priority" widget="priority" attrs="{'readonly': [('is_lock', '=', True)]}" />
                 <field name="creation_date"/>
                 <field name="validation_date" />
                 <field name="request_date" />
               </group>
             </group>
             <group>
-              <field name="description" widget="text"/>
+              <field name="is_lock" invisible="1" />
+              <field name="description" widget="text" attrs="{'readonly': [('is_lock', '=', True)]}"/>
             </group>
           </sheet>
         </form>

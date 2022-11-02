@@ -24,7 +24,7 @@
         </field>
             
         <xpath expr="//field[@name='location']" position="attributes">
-          <attribute name="required">
+          <attribute name="invisible">
             1
           </attribute>
         </xpath>
@@ -32,12 +32,6 @@
         <field name="category_id" position="after">
           <field name="equipment_type_id"  />
         </field>
-            
-        <!-- <xpath expr="//field[@name='department_id']" position="attributes">
-          <attribute name="attrs">
-            {'required': [('equipment_assign_to','=','department')]}
-          </attribute>
-        </xpath> -->
         
         <field name="partner_ref" position="after">
           <field name="vendor_ref"  />
@@ -45,6 +39,10 @@
         
         <field name="effective_date" position="after">
           <field name="manufactoring_date"  />
+        </field>
+        
+        <field name="scrap_date" position="after">
+          <field name="location_ids" widget="many2many_tags" required="1" />
         </field>
 
         <xpath expr="//page[@name='product_information']/group" position="after">
@@ -66,33 +64,37 @@
     </record>	
 
 
-    <!-- <record id="hr_equipment_view_kanban" model="ir.ui.view">
-      <field name="name">equipment.kanban</field>
-      <field name="model">maintenance.equipment</field>
-      <field name="inherit_id" ref="maintenance.hr_equipment_view_kanban" />
+    <record id="maintenance_equipment_location_form" model="ir.ui.view">
+      <field name="name">maintenance.equipment.location.form</field>
+      <field name="model">maintenance.equipment.location</field>
       <field name="arch" type="xml">
-        <field name="name" position="after">
-          <field name="picture" />
-        </field>
-        <xpath expr="//div[hasclass('oe_kanban_content')]" position="replace">
-          <div class="oe_kanban_details">
-            <div class="row">
-              
-              <div class="col-md-3">
-                <div class="o_kanban_image">
-                  <img t-att-src="kanban_image('test.test', 'picture', record.id.raw_value)" alt="Product" class="o_image_64_contain"/>
-                </div>
-              </div>
-                  
-              <div class="col-md-5">
-                <strong><field name="name"/></strong>
-                <div name="tags"/>
-              </div>
-              
-            </div>
-          </div> 
-        </xpath>
+        <form string="Stop Line">
+          <sheet>
+              <group>
+                <group>
+                  <field name="code" />
+                  <field name="name" />
+                </group>
+                <group>
+                  <field name="equipment_id" string="Equipement" />
+                </group>  
+              </group>
+          </sheet>
+        </form>
       </field>
-    </record>	 -->
+    </record>
+
+    <record id="action_maintenance_equipment_location" model="ir.actions.act_window">
+        <field name="name">Position de l'équipement</field>
+        <field name="res_model">maintenance.equipment.location</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+          id="maintenance_equipment_location_menu"
+          sequence="19"
+          parent="maintenance.menu_maintenance_configuration"
+          action="action_maintenance_equipment_location"
+      />
   </data>
 </odoo>

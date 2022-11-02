@@ -61,6 +61,7 @@
         <field name="arch" type="xml">
             <field name="maintenance_type" position="after">
                 <field name="maintenance_kind_id" />
+                <field name="source_document" />
             </field>
             <field name="description" position="after">
                 <notebook>
