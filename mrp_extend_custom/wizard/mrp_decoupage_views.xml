@@ -7,10 +7,20 @@
             <form string="Decoupage de production">
 				<group>
 					<field name="mrp_id" invisible="0"/>
+					<field name="product_id" invisible="0"/>
 					<field name="show_qty" invisible="0"/>
 					<field name="lot_id" invisible="0"/>
 					<field name="location_dest_id" invisible="0"/>
-				</group>	
+					<!-- <field name="company_id" invisible="1"/> -->
+					<!-- <div class="o_row" attrs="{'invisible': [('product_id.tracking', 'in', ('lot', False))]}"> -->
+				</group>
+				<!-- <group attrs="{'invisible': [('lot_id', '=',False)]}">
+					 <label for="lot_sous_id" attrs="{'invisible': [('lot_id', '=',False)]}"/>
+					<div class="o_row" >
+						<field name="lot_sous_id"  />
+						<button name="action_generate_serial" type="object" class="btn btn-primary fa fa-plus-square-o" aria-label="Creates a new serial/lot number" title="Creates a new serial/lot number" role="img" />
+					</div>
+				</group> -->	
                 <footer>
                     <button name="process" string="Apply" type="object" class="btn-primary" data-hotkey="q"/>
                     <button string="Cancel" class="btn-secondary" special="cancel" data-hotkey="z" />

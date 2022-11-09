@@ -13,8 +13,11 @@ class MrpDecoupageWizard(models.TransientModel):
     mrp_id = fields.Many2one('mrp.production', string='MRp')
     location_dest_id = fields.Many2one('stock.location', string='Destination', required=True)
     show_qty = fields.Float(string=u'Quantité')
-
-
+    # lot_sous_id = fields.Many2one('stock.production.lot', string='Lot enfant')
+    product_id = fields.Many2one('product.product', string='Article',readonly=True)
+    
+    
+  
     
     @api.model
     def default_get(self, fields):
