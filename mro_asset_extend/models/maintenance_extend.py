@@ -38,7 +38,7 @@ class MaintenanceEquipmentExtent(models.Model):
     height = fields.Float("Height (in m)", default=0)
     capability = fields.Char(string='Capability')
     attachment = fields.Binary(string='Attachment')
-    picture = fields.Binary(string='Image')
+    picture = fields.Image(string='Image', max_width=1920, max_height=1920)
     link = fields.Char(string='Link', default='https://www.odoo.com')
     location_ids = fields.One2many(
         "maintenance.equipment.location", "equipment_id", string="Utilisé sur les lieux"

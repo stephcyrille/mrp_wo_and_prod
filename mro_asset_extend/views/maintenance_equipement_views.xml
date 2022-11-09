@@ -13,6 +13,11 @@
           </header>
         </sheet>
 
+        <xpath expr="//div[@name='button_box']" position="after">
+          <field name="picture" widget="image" class="oe_avatar" options="{'preview_image': 'picture'}"/>
+        </xpath>
+
+
         <field name="name" position="after">
           <br/>
           <span class="o_form_label">Code</span>
@@ -81,6 +86,32 @@
               </group>
           </sheet>
         </form>
+      </field>
+    </record>
+
+    <record id="extend_equipment_view_kanban" model="ir.ui.view">
+      <field name="name">equipment.kanban</field>
+      <field name="model">maintenance.equipment</field>
+      <field name="inherit_id" ref="maintenance.hr_equipment_view_kanban" />
+      <field name="arch" type="xml">
+        <field name="serial_no" position="after">
+          <field name="id"/>
+        </field>
+
+        <xpath expr="//div[1]/div[2]/div[1]" position="before">
+          <div class="o_kanban_image mr-1">
+            <img t-att-src="kanban_image('maintenance.equipment', 'picture', record.id.raw_value)" class="o_image_64_contain"/>
+          </div>
+        </xpath>
+
+        <xpath expr="//div[1]/div[2]/div[1]" position="replace">
+          <div class="o_kanban_record_body">
+            <b class="o_kanban_record_title"><field name="name"/><span t-if="record.model.raw_value"> (<field name="model"/>)</span></b>
+            <div t-if="record.serial_no.raw_value">
+              <field name="serial_no"/>
+            </div>
+          </div>
+        </xpath>
       </field>
     </record>
 
